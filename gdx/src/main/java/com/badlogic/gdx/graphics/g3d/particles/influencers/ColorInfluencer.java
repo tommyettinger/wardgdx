@@ -30,7 +30,7 @@ public abstract class ColorInfluencer extends Influencer {
 
 	/** It's an {@link Influencer} which assigns a random color when a particle is activated. */
 	public static class Random extends ColorInfluencer {
-		FloatChannel colorChannel;
+		protected FloatChannel colorChannel;
 
 		@Override
 		public void allocateChannels () {
@@ -56,8 +56,8 @@ public abstract class ColorInfluencer extends Influencer {
 
 	/** It's an {@link Influencer} which manages the particle color during its life time. */
 	public static class Single extends ColorInfluencer {
-		FloatChannel alphaInterpolationChannel;
-		FloatChannel lifeChannel;
+		protected FloatChannel alphaInterpolationChannel;
+		protected FloatChannel lifeChannel;
 		public ScaledNumericValue alphaValue;
 		public GradientColorValue colorValue;
 

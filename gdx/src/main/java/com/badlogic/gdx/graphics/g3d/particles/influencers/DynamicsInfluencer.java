@@ -31,7 +31,7 @@ import com.badlogic.gdx.utils.JsonValue;
 public class DynamicsInfluencer extends Influencer {
 	public Array<DynamicsModifier> velocities;
 	private FloatChannel accellerationChannel, positionChannel, previousPositionChannel, rotationChannel, angularVelocityChannel;
-	boolean hasAcceleration, has2dAngularVelocity, has3dAngularVelocity;
+	protected boolean hasAcceleration, has2dAngularVelocity, has3dAngularVelocity;
 
 	public DynamicsInfluencer () {
 		this.velocities = new Array<>(true, 3, DynamicsModifier[]::new);
@@ -147,10 +147,10 @@ public class DynamicsInfluencer extends Influencer {
 		if (hasAcceleration) {
 			/*
 			 * //Euler Integration for(int i=0, offset = 0; i < controller.particles.size; ++i, offset +=positionChannel.strideSize){
-			 * previousPositionChannel.data[offset + ParticleChannels.XOffset] += accellerationChannel.data[offset +
+			 * previousPositionChannel.data[offset + ParticleChannels.XOffset] += accelerationChannel.data[offset +
 			 * ParticleChannels.XOffset]*controller.deltaTime; previousPositionChannel.data[offset + ParticleChannels.YOffset] +=
-			 * accellerationChannel.data[offset + ParticleChannels.YOffset]*controller.deltaTime; previousPositionChannel.data[offset
-			 * + ParticleChannels.ZOffset] += accellerationChannel.data[offset + ParticleChannels.ZOffset]*controller.deltaTime;
+			 * accelerationChannel.data[offset + ParticleChannels.YOffset]*controller.deltaTime; previousPositionChannel.data[offset
+			 * + ParticleChannels.ZOffset] += accelerationChannel.data[offset + ParticleChannels.ZOffset]*controller.deltaTime;
 			 * 
 			 * positionChannel.data[offset + ParticleChannels.XOffset] += previousPositionChannel.data[offset +
 			 * ParticleChannels.XOffset]*controller.deltaTime; positionChannel.data[offset + ParticleChannels.YOffset] +=

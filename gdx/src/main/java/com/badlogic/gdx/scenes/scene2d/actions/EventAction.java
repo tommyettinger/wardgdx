@@ -11,8 +11,8 @@ import com.badlogic.gdx.utils.reflect.ClassReflection;
  * @author JavadocMD
  * @author Nathan Sweet */
 abstract public class EventAction<T extends Event> extends Action {
-	final Class<? extends T> eventClass;
-	boolean result, active;
+	protected final Class<? extends T> eventClass;
+	protected boolean result, active;
 
 	private final EventListener listener = new EventListener() {
 		public boolean handle (Event event) {

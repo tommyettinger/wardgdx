@@ -20,26 +20,25 @@ public class Cell<T extends Actor> implements Poolable {
 	static private Files files;
 	static private Cell defaults;
 
-	Value minWidth, minHeight;
-	Value prefWidth, prefHeight;
-	Value maxWidth, maxHeight;
-	Value spaceTop, spaceLeft, spaceBottom, spaceRight;
-	Value padTop, padLeft, padBottom, padRight;
-	Float fillX, fillY;
-	Integer align;
-	Integer expandX, expandY;
-	Integer colspan;
-	Boolean uniformX, uniformY;
-
-	@Null Actor actor;
-	float actorX, actorY;
-	float actorWidth, actorHeight;
+	protected Value minWidth, minHeight;
+	protected Value prefWidth, prefHeight;
+	protected Value maxWidth, maxHeight;
+	protected Value spaceTop, spaceLeft, spaceBottom, spaceRight;
+	protected Value padTop, padLeft, padBottom, padRight;
+	protected Float fillX, fillY;
+	protected Integer align;
+	protected Integer expandX, expandY;
+	protected Integer colspan;
+	protected Boolean uniformX, uniformY;
+	protected @Null Actor actor;
+	protected float actorX, actorY;
+	protected float actorWidth, actorHeight;
+	protected boolean endRow;
+	protected int column, row;
+	protected int cellAboveIndex;
+	protected float computedPadTop, computedPadLeft, computedPadBottom, computedPadRight;
 
 	private Table table;
-	boolean endRow;
-	int column, row;
-	int cellAboveIndex;
-	float computedPadTop, computedPadLeft, computedPadBottom, computedPadRight;
 
 	public Cell () {
 		cellAboveIndex = -1;

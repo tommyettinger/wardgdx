@@ -84,17 +84,17 @@ public class CameraGroupStrategy implements GroupStrategy, Disposable {
 	private static final int GROUP_OPAQUE = 0;
 	private static final int GROUP_BLEND = 1;
 
-	Pool<Array<Decal>> arrayPool = new Pool<Array<Decal>>(16) {
+	protected Pool<Array<Decal>> arrayPool = new Pool<Array<Decal>>(16) {
 		@Override
 		protected Array<Decal> newObject () {
 			return new Array();
 		}
 	};
-	Array<Array<Decal>> usedArrays = new Array<Array<Decal>>();
-	ObjectMap<DecalMaterial, Array<Decal>> materialGroups = new ObjectMap<DecalMaterial, Array<Decal>>();
+	protected Array<Array<Decal>> usedArrays = new Array<Array<Decal>>();
+	protected ObjectMap<DecalMaterial, Array<Decal>> materialGroups = new ObjectMap<DecalMaterial, Array<Decal>>();
 
-	Camera camera;
-	ShaderProgram shader;
+	protected Camera camera;
+	protected ShaderProgram shader;
 	private final Comparator<Decal> cameraSorter;
 
 	public CameraGroupStrategy (Camera camera) {

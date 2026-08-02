@@ -7,7 +7,7 @@ import com.badlogic.gdx.scenes.scene2d.Event;
  * @author JavadocMD
  * @author Nathan Sweet */
 public class CountdownEventAction<T extends Event> extends EventAction<T> {
-	int count, current;
+	protected int count, current;
 
 	public CountdownEventAction (Class<? extends T> eventClass, int count) {
 		super(eventClass);

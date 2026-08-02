@@ -39,12 +39,12 @@ import com.badlogic.gdx.utils.ObjectMap;
  * {@link #result(Object)} is called and the dialog is removed from the stage.
  * @author Nathan Sweet */
 public class Dialog extends Window {
-	Table contentTable, buttonTable;
+	protected Table contentTable, buttonTable;
 	private @Null Skin skin;
-	ObjectMap<Actor, Object> values = new ObjectMap();
-	boolean cancelHide;
-	Actor previousKeyboardFocus, previousScrollFocus;
-	FocusListener focusListener;
+	protected ObjectMap<Actor, Object> values = new ObjectMap();
+	protected boolean cancelHide;
+	protected Actor previousKeyboardFocus, previousScrollFocus;
+	protected FocusListener focusListener;
 
 	protected InputListener ignoreTouchDown = new InputListener() {
 		public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {

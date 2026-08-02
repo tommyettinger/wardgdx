@@ -26,12 +26,12 @@ import com.badlogic.gdx.graphics.glutils.ETC1.ETC1Data;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 
 public class ETC1TextureData implements TextureData {
-	FileHandle file;
-	ETC1Data data;
-	boolean useMipMaps;
-	int width = 0;
-	int height = 0;
-	boolean isPrepared = false;
+	protected FileHandle file;
+	protected ETC1Data data;
+	protected boolean useMipMaps;
+	protected int width = 0;
+	protected int height = 0;
+	protected boolean isPrepared = false;
 
 	public ETC1TextureData (FileHandle file) {
 		this(file, false);

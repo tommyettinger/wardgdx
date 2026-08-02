@@ -30,25 +30,25 @@ import com.badlogic.gdx.utils.ObjectMap.Entry;
 /** Manages drag and drop operations through registered drag sources and drop targets.
  * @author Nathan Sweet */
 public class DragAndDrop {
-	static final Vector2 tmpVector = new Vector2();
+	protected static final Vector2 tmpVector = new Vector2();
 
-	Source dragSource;
-	Payload payload;
-	Actor dragActor;
-	boolean removeDragActor;
-	Target target;
-	boolean isValidTarget;
-	final Array<Target> targets = new Array(8);
-	final ObjectMap<Source, DragListener> sourceListeners = new ObjectMap(8);
+	protected Source dragSource;
+	protected Payload payload;
+	protected Actor dragActor;
+	protected boolean removeDragActor;
+	protected Target target;
+	protected boolean isValidTarget;
+	protected final Array<Target> targets = new Array(8);
+	protected final ObjectMap<Source, DragListener> sourceListeners = new ObjectMap(8);
 	private float tapSquareSize = 8;
 	private int button;
-	float dragActorX = 0, dragActorY = 0;
-	float touchOffsetX, touchOffsetY;
-	long dragValidTime;
-	int dragTime = 250;
-	int activePointer = -1;
-	boolean cancelTouchFocus = true;
-	boolean keepWithinStage = true;
+	protected float dragActorX = 0, dragActorY = 0;
+	protected float touchOffsetX, touchOffsetY;
+	protected long dragValidTime;
+	protected int dragTime = 250;
+	protected int activePointer = -1;
+	protected boolean cancelTouchFocus = true;
+	protected boolean keepWithinStage = true;
 
 	public void addSource (final Source source) {
 		DragListener listener = new DragListener() {
@@ -272,7 +272,7 @@ public class DragAndDrop {
 	/** A source where a payload can be dragged from.
 	 * @author Nathan Sweet */
 	static abstract public class Source {
-		final Actor actor;
+		protected final Actor actor;
 
 		public Source (Actor actor) {
 			if (actor == null) throw new IllegalArgumentException("actor cannot be null.");
@@ -301,7 +301,7 @@ public class DragAndDrop {
 	/** A target where a payload can be dropped to.
 	 * @author Nathan Sweet */
 	static abstract public class Target {
-		final Actor actor;
+		protected final Actor actor;
 
 		public Target (Actor actor) {
 			if (actor == null) throw new IllegalArgumentException("actor cannot be null.");
@@ -333,8 +333,8 @@ public class DragAndDrop {
 	 * target. Such actors will be added the stage automatically during the drag operation as necessary and they will only be
 	 * removed from the stage if they were added automatically. A source actor can be used as a payload drag actor. */
 	static public class Payload {
-		@Null Actor dragActor, validDragActor, invalidDragActor;
-		@Null Object object;
+		protected @Null Actor dragActor, validDragActor, invalidDragActor;
+		protected @Null Object object;
 
 		public void setDragActor (@Null Actor dragActor) {
 			this.dragActor = dragActor;

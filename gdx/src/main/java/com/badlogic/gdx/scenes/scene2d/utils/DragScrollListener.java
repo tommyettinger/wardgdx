@@ -34,14 +34,14 @@ import com.badlogic.gdx.utils.Timer.Task;
  * If using drag and drop, {@link DragAndDrop#setCancelTouchFocus(boolean)} must be false.
  * @author Nathan Sweet */
 public class DragScrollListener extends DragListener {
-	static final Vector2 tmpCoords = new Vector2();
+	protected static final Vector2 tmpCoords = new Vector2();
 
 	private ScrollPane scroll;
 	private Task scrollUp, scrollDown;
-	Interpolation interpolation = Interpolation.exp5In;
-	float minSpeed = 15, maxSpeed = 75, tickSecs = 0.05f;
-	long startTime, rampTime = 1750;
-	float padTop, padBottom;
+	protected Interpolation interpolation = Interpolation.exp5In;
+	protected float minSpeed = 15, maxSpeed = 75, tickSecs = 0.05f;
+	protected long startTime, rampTime = 1750;
+	protected float padTop, padBottom;
 
 	public DragScrollListener (final ScrollPane scroll) {
 		this.scroll = scroll;

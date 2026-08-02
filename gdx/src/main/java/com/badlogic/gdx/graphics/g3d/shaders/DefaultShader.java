@@ -199,7 +199,7 @@ public class DefaultShader extends BaseShader {
 
 		public static class Bones extends LocalSetter {
 			private final static Matrix4 idtMatrix = new Matrix4();
-			public final float bones[];
+			public final float[] bones;
 
 			public Bones (final int numBones) {
 				this.bones = new float[numBones * 16];

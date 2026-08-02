@@ -36,7 +36,7 @@ public abstract class DynamicsModifier extends Influencer {
 	protected static final Quaternion TMP_Q = new Quaternion();
 
 	public static class FaceDirection extends DynamicsModifier {
-		FloatChannel rotationChannel, accellerationChannel;
+		protected FloatChannel rotationChannel, accelerationChannel;
 
 		public FaceDirection () {
 		}
@@ -48,17 +48,17 @@ public abstract class DynamicsModifier extends Influencer {
 		@Override
 		public void allocateChannels () {
 			rotationChannel = controller.particles.addChannel(ParticleChannels.Rotation3D);
-			accellerationChannel = controller.particles.addChannel(ParticleChannels.Acceleration);
+			accelerationChannel = controller.particles.addChannel(ParticleChannels.Acceleration);
 		}
 
 		@Override
 		public void update () {
 			for (int i = 0, accelOffset = 0, c = i + controller.particles.size
-				* rotationChannel.strideSize; i < c; i += rotationChannel.strideSize, accelOffset += accellerationChannel.strideSize) {
+				* rotationChannel.strideSize; i < c; i += rotationChannel.strideSize, accelOffset += accelerationChannel.strideSize) {
 
-				Vector3 axisZ = TMP_V1.set(accellerationChannel.data[accelOffset + ParticleChannels.XOffset],
-					accellerationChannel.data[accelOffset + ParticleChannels.YOffset],
-					accellerationChannel.data[accelOffset + ParticleChannels.ZOffset]).nor(),
+				Vector3 axisZ = TMP_V1.set(accelerationChannel.data[accelOffset + ParticleChannels.XOffset],
+					accelerationChannel.data[accelOffset + ParticleChannels.YOffset],
+					accelerationChannel.data[accelOffset + ParticleChannels.ZOffset]).nor(),
 					axisY = TMP_V2.set(TMP_V1).crs(Vector3.Y).nor().crs(TMP_V1).nor(), axisX = TMP_V3.set(axisY).crs(axisZ).nor();
 				TMP_Q.setFromAxes(false, axisX.x, axisY.x, axisZ.x, axisX.y, axisY.y, axisZ.y, axisX.z, axisY.z, axisZ.z);
 				rotationChannel.data[i + ParticleChannels.XOffset] = TMP_Q.x;
@@ -187,7 +187,7 @@ public abstract class DynamicsModifier extends Influencer {
 	}
 
 	public static class Rotational2D extends Strength {
-		FloatChannel rotationalVelocity2dChannel;
+		protected FloatChannel rotationalVelocity2dChannel;
 
 		public Rotational2D () {
 		}
@@ -219,7 +219,7 @@ public abstract class DynamicsModifier extends Influencer {
 	}
 
 	public static class Rotational3D extends Angular {
-		FloatChannel rotationChannel, rotationalForceChannel;
+		protected FloatChannel rotationChannel, rotationalForceChannel;
 
 		public Rotational3D () {
 		}
@@ -293,8 +293,8 @@ public abstract class DynamicsModifier extends Influencer {
 	}
 
 	public static class CentripetalAcceleration extends Strength {
-		FloatChannel accelerationChannel;
-		FloatChannel positionChannel;
+		protected FloatChannel accelerationChannel;
+		protected FloatChannel positionChannel;
 
 		public CentripetalAcceleration () {
 		}
@@ -343,7 +343,7 @@ public abstract class DynamicsModifier extends Influencer {
 	}
 
 	public static class PolarAcceleration extends Angular {
-		FloatChannel directionalVelocityChannel;
+		protected FloatChannel directionalVelocityChannel;
 
 		public PolarAcceleration () {
 		}
@@ -393,7 +393,7 @@ public abstract class DynamicsModifier extends Influencer {
 	}
 
 	public static class TangentialAcceleration extends Angular {
-		FloatChannel directionalVelocityChannel, positionChannel;
+		protected FloatChannel directionalVelocityChannel, positionChannel;
 
 		public TangentialAcceleration () {
 		}
@@ -449,7 +449,7 @@ public abstract class DynamicsModifier extends Influencer {
 	}
 
 	public static class BrownianAcceleration extends Strength {
-		FloatChannel accelerationChannel;
+		protected FloatChannel accelerationChannel;
 
 		public BrownianAcceleration () {
 		}
