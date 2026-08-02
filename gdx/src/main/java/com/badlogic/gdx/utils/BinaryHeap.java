@@ -231,8 +231,8 @@ public class BinaryHeap<T extends BinaryHeap.Node> {
 	/** A binary heap node.
 	 * @author Nathan Sweet */
 	static public class Node {
-		float value;
-		int index;
+		protected float value;
+		protected int index;
 
 		/** @param value The initial value for the node. To change the value, use {@link BinaryHeap#add(Node, float)} if the node is
 		 *           not in the heap, or {@link BinaryHeap#setValue(Node, float)} if the node is in the heap. */

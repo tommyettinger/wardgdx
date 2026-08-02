@@ -708,8 +708,8 @@ public class Array<T> implements Iterable<T> {
 	static public class ArrayIterator<T> implements Iterator<T>, Iterable<T> {
 		private final Array<T> array;
 		private final boolean allowRemove;
-		int index;
-		boolean valid = true;
+		protected int index;
+		protected boolean valid = true;
 
 // ArrayIterable<T> iterable;
 

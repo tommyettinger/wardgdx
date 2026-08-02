@@ -68,7 +68,7 @@ public class Actor {
 	}
 
 	private @Null Stage stage;
-	@Null Group parent;
+	protected @Null Group parent;
 	private final DelayedRemovalArray<EventListener> listeners = new DelayedRemovalArray(0);
 	private final DelayedRemovalArray<EventListener> captureListeners = new DelayedRemovalArray(0);
 	private final Array<Action> actions = new Array(0);
@@ -76,12 +76,12 @@ public class Actor {
 	private @Null String name;
 	private Touchable touchable = Touchable.enabled;
 	private boolean visible = true, debug;
-	float x, y;
-	float width, height;
-	float originX, originY;
-	float scaleX = 1, scaleY = 1;
-	float rotation;
-	final Color color = new Color(1, 1, 1, 1);
+	protected float x, y;
+	protected float width, height;
+	protected float originX, originY;
+	protected float scaleX = 1, scaleY = 1;
+	protected float rotation;
+	protected final Color color = new Color(1, 1, 1, 1);
 	private @Null Object userObject;
 
 	/** Draws the actor. The batch is configured to draw in the parent's coordinate system.

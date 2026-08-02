@@ -574,9 +574,9 @@ public class ArrayMap<K, V> implements Iterable<ObjectMap.Entry<K, V>> {
 
 	static public class Entries<K, V> implements Iterable<Entry<K, V>>, Iterator<Entry<K, V>> {
 		private final ArrayMap<K, V> map;
-		Entry<K, V> entry = new Entry();
-		int index;
-		boolean valid = true;
+		protected Entry<K, V> entry = new Entry();
+		protected int index;
+		protected boolean valid = true;
 
 		public Entries (ArrayMap<K, V> map) {
 			this.map = map;
@@ -612,8 +612,8 @@ public class ArrayMap<K, V> implements Iterable<ObjectMap.Entry<K, V>> {
 
 	static public class Values<V> implements Iterable<V>, Iterator<V> {
 		private final ArrayMap<Object, V> map;
-		int index;
-		boolean valid = true;
+		protected int index;
+		protected boolean valid = true;
 
 		public Values (ArrayMap<Object, V> map) {
 			this.map = map;
@@ -655,8 +655,8 @@ public class ArrayMap<K, V> implements Iterable<ObjectMap.Entry<K, V>> {
 
 	static public class Keys<K> implements Iterable<K>, Iterator<K> {
 		private final ArrayMap<K, Object> map;
-		int index;
-		boolean valid = true;
+		protected int index;
+		protected boolean valid = true;
 
 		public Keys (ArrayMap<K, Object> map) {
 			this.map = map;

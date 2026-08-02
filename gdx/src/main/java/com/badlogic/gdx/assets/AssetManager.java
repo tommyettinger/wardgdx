@@ -67,24 +67,22 @@ import com.badlogic.gdx.utils.reflect.ClassReflection;
 /** Loads and stores assets like textures, bitmapfonts, tile maps, sounds, music and so on.
  * @author mzechner */
 public class AssetManager implements Disposable {
-	final ObjectMap<Class, ObjectMap<String, RefCountedContainer>> assets = new ObjectMap();
-	final ObjectMap<String, Class> assetTypes = new ObjectMap();
-	final ObjectMap<String, Array<String>> assetDependencies = new ObjectMap();
-	final ObjectSet<String> injected = new ObjectSet();
+	protected final ObjectMap<Class, ObjectMap<String, RefCountedContainer>> assets = new ObjectMap();
+	protected final ObjectMap<String, Class> assetTypes = new ObjectMap();
+	protected final ObjectMap<String, Array<String>> assetDependencies = new ObjectMap();
+	protected final ObjectSet<String> injected = new ObjectSet();
+	protected final ObjectMap<Class, ObjectMap<String, AssetLoader>> loaders = new ObjectMap();
+	protected final Array<AssetDescriptor> loadQueue = new Array();
+	protected final AsyncExecutor executor;
+	protected final Array<AssetLoadingTask> tasks = new Array();
+	protected AssetErrorListener listener;
+	protected int loaded;
+	protected int toLoad;
+	protected int peakTasks;
 
-	final ObjectMap<Class, ObjectMap<String, AssetLoader>> loaders = new ObjectMap();
-	final Array<AssetDescriptor> loadQueue = new Array();
-	final AsyncExecutor executor;
+	protected final FileHandleResolver resolver;
 
-	final Array<AssetLoadingTask> tasks = new Array();
-	AssetErrorListener listener;
-	int loaded;
-	int toLoad;
-	int peakTasks;
-
-	final FileHandleResolver resolver;
-
-	Logger log = new Logger("AssetManager", Application.LOG_NONE);
+	protected Logger log = new Logger("AssetManager", Application.LOG_NONE);
 
 	/** Creates a new AssetManager with all default loaders. */
 	public AssetManager () {
@@ -810,8 +808,8 @@ public class AssetManager implements Disposable {
 		return assetTypes.get(fileName);
 	}
 
-	static class RefCountedContainer {
-		Object object;
-		int refCount = 1;
+	protected static class RefCountedContainer {
+		protected Object object;
+	    protected int refCount = 1;
 	}
 }

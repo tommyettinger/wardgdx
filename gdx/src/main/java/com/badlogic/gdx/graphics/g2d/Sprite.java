@@ -32,14 +32,14 @@ import com.badlogic.gdx.math.Rectangle;
  * @author mzechner
  * @author Nathan Sweet */
 public class Sprite extends TextureRegion {
-	static final int VERTEX_SIZE = 2 + 1 + 2;
-	static final int SPRITE_SIZE = 4 * VERTEX_SIZE;
+	public static final int VERTEX_SIZE = 2 + 1 + 2;
+	public static final int SPRITE_SIZE = 4 * VERTEX_SIZE;
 
 	final float[] vertices = new float[SPRITE_SIZE];
 	private final Color color = new Color(1, 1, 1, 1);
 	private float packedColor = Color.WHITE_FLOAT_BITS;
 	private float x, y;
-	float width, height;
+	protected float width, height;
 	private float originX, originY;
 	private float rotation;
 	private float scaleX = 1, scaleY = 1;

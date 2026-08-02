@@ -33,8 +33,8 @@ public class ActorGestureListener implements EventListener {
 	static final Vector2 tmpCoords = new Vector2(), tmpCoords2 = new Vector2();
 
 	private final GestureDetector detector;
-	InputEvent event;
-	Actor actor, touchDownTarget;
+	protected InputEvent event;
+	protected Actor actor, touchDownTarget;
 
 	/** @see GestureDetector#GestureDetector(com.badlogic.gdx.input.GestureDetector.GestureListener) */
 	public ActorGestureListener () {

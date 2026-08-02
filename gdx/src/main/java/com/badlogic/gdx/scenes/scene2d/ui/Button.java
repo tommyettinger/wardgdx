@@ -42,8 +42,8 @@ import com.badlogic.gdx.utils.Null;
  * @author Nathan Sweet */
 public class Button extends Table implements Disableable, Styleable<Button.ButtonStyle> {
 	private ButtonStyle style;
-	boolean isChecked, isDisabled;
-	ButtonGroup buttonGroup;
+	protected boolean isChecked, isDisabled;
+	protected ButtonGroup buttonGroup;
 	private ClickListener clickListener;
 	private boolean programmaticChangeEvents = true;
 

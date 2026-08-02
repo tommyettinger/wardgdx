@@ -24,7 +24,7 @@ import java.util.Arrays;
  * @author jshapcott */
 public class Bits {
 
-	long[] bits = {0};
+	protected long[] bits = {0};
 
 	public Bits () {
 	}

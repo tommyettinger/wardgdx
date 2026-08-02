@@ -109,8 +109,8 @@ public class BillboardParticleBatch extends BufferedParticleBatch<BillboardContr
 			this.mode = mode;
 		}
 
-		boolean useGPU;
-		AlignMode mode;
+		protected boolean useGPU;
+		protected AlignMode mode;
 	}
 
 	private RenderablePool renderablePool;
@@ -124,7 +124,7 @@ public class BillboardParticleBatch extends BufferedParticleBatch<BillboardContr
 	protected Texture texture;
 	protected BlendingAttribute blendingAttribute;
 	protected DepthTestAttribute depthTestAttribute;
-	Shader shader;
+	protected Shader shader;
 
 	/** Create a new BillboardParticleBatch
 	 * @param mode
