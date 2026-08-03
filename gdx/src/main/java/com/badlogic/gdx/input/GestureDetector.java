@@ -28,7 +28,7 @@ import com.badlogic.gdx.utils.Timer.Task;
  * {@link GestureListener}.
  * @author mzechner */
 public class GestureDetector extends InputAdapter {
-	final GestureListener listener;
+	protected final GestureListener listener;
 	private float tapRectangleWidth;
 	private float tapRectangleHeight;
 	private long tapCountInterval;
@@ -40,14 +40,14 @@ public class GestureDetector extends InputAdapter {
 	private long lastTapTime;
 	private float lastTapX, lastTapY;
 	private int lastTapButton, lastTapPointer;
-	boolean longPressFired;
+	protected boolean longPressFired;
 	private boolean pinching;
 	private boolean panning;
 
 	private final VelocityTracker tracker = new VelocityTracker();
 	private float tapRectangleCenterX, tapRectangleCenterY;
 	private long touchDownTime;
-	Vector2 pointer1 = new Vector2();
+	protected Vector2 pointer1 = new Vector2();
 	private final Vector2 pointer2 = new Vector2();
 	private final Vector2 initialPointer1 = new Vector2();
 	private final Vector2 initialPointer2 = new Vector2();

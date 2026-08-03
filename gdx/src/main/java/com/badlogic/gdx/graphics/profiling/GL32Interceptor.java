@@ -22,11 +22,10 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
 import com.badlogic.gdx.graphics.GL32;
-import com.badlogic.gdx.graphics.GL32.DebugProc;
 
 public class GL32Interceptor extends GL31Interceptor implements GL32 {
 
-	final GL32 gl32;
+	protected final GL32 gl32;
 
 	public GL32Interceptor (GLProfiler glProfiler, GL32 gl32) {
 		super(glProfiler, gl32);

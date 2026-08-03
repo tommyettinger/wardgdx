@@ -25,13 +25,13 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 
 public class FileTextureData implements TextureData {
 
-	final FileHandle file;
-	int width = 0;
-	int height = 0;
-	Format format;
-	Pixmap pixmap;
-	boolean useMipMaps;
-	boolean isPrepared = false;
+	protected final FileHandle file;
+	protected int width = 0;
+	protected int height = 0;
+	protected Format format;
+	protected Pixmap pixmap;
+	protected boolean useMipMaps;
+	protected boolean isPrepared = false;
 
 	public FileTextureData (FileHandle file, Pixmap preloadedPixmap, Format format, boolean useMipMaps) {
 		this.file = file;

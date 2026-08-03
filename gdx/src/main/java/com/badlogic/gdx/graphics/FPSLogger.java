@@ -24,8 +24,8 @@ import com.badlogic.gdx.utils.TimeUtils;
  * 
  * @author mzechner */
 public class FPSLogger {
-	long startTime;
-	int bound;
+	protected long startTime;
+	protected int bound;
 
 	public FPSLogger () {
 		this(Integer.MAX_VALUE);
@@ -35,6 +35,14 @@ public class FPSLogger {
 	public FPSLogger (int bound) {
 		this.bound = bound;
 		startTime = TimeUtils.nanoTime();
+	}
+
+	public int getBound() {
+		return bound;
+	}
+
+	public long getStartTime() {
+		return startTime;
 	}
 
 	public void setBound (int bound) {

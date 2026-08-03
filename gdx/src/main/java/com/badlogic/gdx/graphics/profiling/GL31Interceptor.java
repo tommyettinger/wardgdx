@@ -24,7 +24,7 @@ import com.badlogic.gdx.graphics.GL31;
 
 public class GL31Interceptor extends GL30Interceptor implements GL31 {
 
-	final GL31 gl31;
+	protected final GL31 gl31;
 
 	public GL31Interceptor (GLProfiler glProfiler, GL31 gl31) {
 		super(glProfiler, gl31);

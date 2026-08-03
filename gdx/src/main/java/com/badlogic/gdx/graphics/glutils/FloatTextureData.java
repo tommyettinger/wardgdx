@@ -31,17 +31,14 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 /** A {@link TextureData} implementation which should be used to create float textures. */
 public class FloatTextureData implements TextureData {
 
-	int width = 0;
-	int height = 0;
-
-	int internalFormat;
-	int format;
-	int type;
-
-	boolean isGpuOnly;
-
-	boolean isPrepared = false;
-	FloatBuffer buffer;
+	protected int width = 0;
+	protected int height = 0;
+	protected int internalFormat;
+	protected int format;
+	protected int type;
+	protected boolean isGpuOnly;
+	protected boolean isPrepared = false;
+	protected FloatBuffer buffer;
 
 	public FloatTextureData (int w, int h, int internalFormat, int format, int type, boolean isGpuOnly) {
 		this.width = w;

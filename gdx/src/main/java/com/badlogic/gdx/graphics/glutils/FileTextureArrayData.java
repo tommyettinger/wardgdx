@@ -31,7 +31,7 @@ public class FileTextureArrayData implements TextureArrayData {
 	private boolean prepared;
 	private Pixmap.Format format;
 	private int depth;
-	boolean useMipMaps;
+	protected boolean useMipMaps;
 
 	public FileTextureArrayData (Pixmap.Format format, boolean useMipMaps, FileHandle[] files) {
 		this.format = format;

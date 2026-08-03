@@ -28,15 +28,15 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
 public class GLOnlyTextureData implements TextureData {
 
 	/** width and height */
-	int width = 0;
-	int height = 0;
-	boolean isPrepared = false;
+	protected int width = 0;
+	protected int height = 0;
+	protected boolean isPrepared = false;
 
 	/** properties of opengl texture */
-	int mipLevel = 0;
-	int internalFormat;
-	int format;
-	int type;
+	protected int mipLevel = 0;
+	protected int internalFormat;
+	protected int format;
+	protected int type;
 
 	/** @see "https://www.khronos.org/opengles/sdk/docs/man/xhtml/glTexImage2D.xml"
 	 * @param internalFormat Specifies the internal format of the texture. Must be one of the following symbolic constants:
