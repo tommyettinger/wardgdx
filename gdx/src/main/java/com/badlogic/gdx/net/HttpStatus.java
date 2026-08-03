@@ -28,7 +28,7 @@ import com.badlogic.gdx.Net.HttpResponse;
  * (HTTP/1.1), and RFC2518 (WebDAV) are listed. */
 public class HttpStatus {
 
-	int statusCode;
+	protected int statusCode;
 
 	/** Returns the status code of the HTTP response, normally 2xx status codes indicate success while 4xx and 5xx indicate client
 	 * and server errors, respectively (see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP/1.1: Status Code

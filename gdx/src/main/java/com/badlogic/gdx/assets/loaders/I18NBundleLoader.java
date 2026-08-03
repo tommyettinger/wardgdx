@@ -48,7 +48,7 @@ public class I18NBundleLoader extends AsynchronousAssetLoader<I18NBundle, I18NBu
 		super(resolver);
 	}
 
-	I18NBundle bundle;
+	protected I18NBundle bundle;
 
 	@Override
 	public void loadAsync (AssetManager manager, String fileName, FileHandle file, I18NBundleParameter parameter) {

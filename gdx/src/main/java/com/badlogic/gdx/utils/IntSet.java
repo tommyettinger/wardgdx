@@ -39,8 +39,8 @@ import static com.badlogic.gdx.utils.ObjectSet.tableSize;
 public class IntSet {
 	public int size;
 
-	int[] keyTable;
-	boolean hasZeroValue;
+	protected int[] keyTable;
+	protected boolean hasZeroValue;
 
 	private final float loadFactor;
 	private int threshold;
@@ -364,9 +364,9 @@ public class IntSet {
 
 		public boolean hasNext;
 
-		final IntSet set;
-		int nextIndex, currentIndex;
-		boolean valid = true;
+		protected final IntSet set;
+		protected int nextIndex, currentIndex;
+		protected boolean valid = true;
 
 		public IntSetIterator (IntSet set) {
 			this.set = set;

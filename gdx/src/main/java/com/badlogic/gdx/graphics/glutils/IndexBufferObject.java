@@ -47,14 +47,14 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
  *
  * @author mzechner, Thorsten Schleinzer */
 public class IndexBufferObject implements IndexData {
-	final ShortBuffer buffer;
-	final ByteBuffer byteBuffer;
-	final boolean ownsBuffer;
-	int bufferHandle;
-	final boolean isDirect;
-	boolean isDirty = true;
-	boolean isBound = false;
-	final int usage;
+	protected final ShortBuffer buffer;
+	protected final ByteBuffer byteBuffer;
+	protected final boolean ownsBuffer;
+	protected int bufferHandle;
+	protected final boolean isDirect;
+	protected boolean isDirty = true;
+	protected boolean isBound = false;
+	protected final int usage;
 
 	// used to work around bug: https://android-review.googlesource.com/#/c/73175/
 	private final boolean empty;

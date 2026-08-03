@@ -39,8 +39,8 @@ public class InstanceBufferObject implements InstanceData {
 	private boolean ownsBuffer;
 	private int bufferHandle;
 	private int usage;
-	boolean isDirty = false;
-	boolean isBound = false;
+	protected boolean isDirty = false;
+	protected boolean isBound = false;
 
 	public InstanceBufferObject (boolean isStatic, int numVertices, VertexAttribute... attributes) {
 		this(isStatic, numVertices, new VertexAttributes(attributes));

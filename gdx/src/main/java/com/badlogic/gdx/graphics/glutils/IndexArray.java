@@ -23,8 +23,8 @@ import java.nio.ShortBuffer;
 import com.badlogic.gdx.utils.BufferUtils;
 
 public class IndexArray implements IndexData {
-	final ShortBuffer buffer;
-	final ByteBuffer byteBuffer;
+	protected final ShortBuffer buffer;
+	protected final ByteBuffer byteBuffer;
 
 	// used to work around bug: https://android-review.googlesource.com/#/c/73175/
 	private final boolean empty;

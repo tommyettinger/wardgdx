@@ -40,11 +40,11 @@ import static com.badlogic.gdx.utils.ObjectSet.tableSize;
 public class IntIntMap implements Iterable<IntIntMap.Entry> {
 	public int size;
 
-	int[] keyTable;
-	int[] valueTable;
+	protected int[] keyTable;
+	protected int[] valueTable;
 
-	int zeroValue;
-	boolean hasZeroValue;
+	protected int zeroValue;
+	protected boolean hasZeroValue;
 
 	private final float loadFactor;
 	private int threshold;

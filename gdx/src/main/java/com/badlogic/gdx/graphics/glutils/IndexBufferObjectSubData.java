@@ -42,13 +42,13 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
  *
  * @author mzechner */
 public class IndexBufferObjectSubData implements IndexData {
-	final ShortBuffer buffer;
-	final ByteBuffer byteBuffer;
-	int bufferHandle;
-	final boolean isDirect;
-	boolean isDirty = true;
-	boolean isBound = false;
-	final int usage;
+	protected final ShortBuffer buffer;
+	protected final ByteBuffer byteBuffer;
+	protected int bufferHandle;
+	protected final boolean isDirect;
+	protected boolean isDirty = true;
+	protected boolean isBound = false;
+	protected final int usage;
 
 	/** Creates a new IndexBufferObject.
 	 *

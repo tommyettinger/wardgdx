@@ -169,7 +169,7 @@ public abstract class Interpolation {
 	//
 
 	static public class Pow extends Interpolation {
-		final int power;
+		protected final int power;
 
 		public Pow (int power) {
 			this.power = power;
@@ -204,7 +204,7 @@ public abstract class Interpolation {
 	//
 
 	static public class Exp extends Interpolation {
-		final float value, power, min, scale;
+		protected final float value, power, min, scale;
 
 		public Exp (float value, float power) {
 			this.value = value;
@@ -242,7 +242,7 @@ public abstract class Interpolation {
 	//
 
 	static public class Elastic extends Interpolation {
-		final float value, power, scale, bounces;
+		protected final float value, power, scale, bounces;
 
 		public Elastic (float value, float power, int bounces, float scale) {
 			this.value = value;
@@ -309,7 +309,7 @@ public abstract class Interpolation {
 	}
 
 	static public class BounceOut extends Interpolation {
-		final float[] widths, heights;
+		protected final float[] widths, heights;
 
 		public BounceOut (float[] widths, float[] heights) {
 			if (widths.length != heights.length)
