@@ -72,7 +72,7 @@ public abstract class ModelInfluencer extends Influencer {
 			}
 		}
 
-		ModelInstancePool pool;
+		protected ModelInstancePool pool;
 
 		public Random () {
 			super();
@@ -116,7 +116,7 @@ public abstract class ModelInfluencer extends Influencer {
 	}
 
 	public Array<Model> models;
-	ObjectChannel<ModelInstance> modelChannel;
+	protected ObjectChannel<ModelInstance> modelChannel;
 
 	public ModelInfluencer () {
 		this.models = new Array<>(true, 1, Model[]::new);

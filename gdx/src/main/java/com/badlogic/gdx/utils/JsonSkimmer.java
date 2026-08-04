@@ -33,8 +33,8 @@ import com.badlogic.gdx.utils.JsonValue.ValueType;
 /** Lightweight event-based JSON parser. All values are provided as strings to reduce work when many values are ignored.
  * @author Nathan Sweet */
 public class JsonSkimmer {
-	final JsonToken nameString, value;
-	int[] stack = new int[8];
+	protected final JsonToken nameString, value;
+	protected int[] stack = new int[8];
 	protected final CharArray buffer = new CharArray();
 
 	public JsonSkimmer () {
@@ -603,7 +603,7 @@ public class JsonSkimmer {
 	}
 
 	static public class JsonToken {
-		final CharArray buffer;
+		protected final CharArray buffer;
 		public char[] chars;
 
 		public int start, length;

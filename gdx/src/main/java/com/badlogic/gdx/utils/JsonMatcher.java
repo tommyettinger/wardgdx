@@ -153,24 +153,24 @@ import com.badlogic.gdx.utils.JsonWriter.OutputType;
 public class JsonMatcher extends JsonSkimmer {
 	static private final boolean debug = false;
 
-	static private final int none = 0; // @off
-	static final int match   = 0b000001;
-	static final int process = 0b000010;
-	static final int capture = 0b000100;
-	static final int array   = 0b001000;
-	static final int keys    = 0b010000;
-	static final int single  = 0b100000; // @on
+	public static final int none = 0; // @off
+	public static final int match   = 0b000001;
+	public static final int process = 0b000010;
+	public static final int capture = 0b000100;
+	public static final int array   = 0b001000;
+	public static final int keys    = 0b010000;
+	public static final int single  = 0b100000; // @on
 
-	Processor processor;
-	Pattern[] patterns = new Pattern[0], original, all;
-	int total, endCaptures;
+	protected Processor processor;
+	protected Pattern[] patterns = new Pattern[0], original, all;
+	protected int total, endCaptures;
 	private boolean rejected;
-	boolean stoppable = true;
+	protected boolean stoppable = true;
 
-	int depth, captured;
-	char[] chars;
-	final IntArray path = new IntArray();
-	Pattern processPattern;
+	protected int depth, captured;
+	protected char[] chars;
+	protected final IntArray path = new IntArray();
+	protected Pattern processPattern;
 
 	public JsonMatcher () {
 	}
@@ -731,14 +731,14 @@ public class JsonMatcher extends JsonSkimmer {
 		return value;
 	}
 
-	static class Pattern {
-		final Node root;
-		final Processor processor;
-		JsonValue capture = new JsonValue(ValueType.object);
-		int captured, total;
-		boolean captureAll, captureRoot, at;
-		final Array<JsonValue> stack = new Array();
-		Node current;
+	protected static class Pattern {
+		protected final Node root;
+		protected final Processor processor;
+		protected JsonValue capture = new JsonValue(ValueType.object);
+		protected int captured, total;
+		protected boolean captureAll, captureRoot, at;
+		protected final Array<JsonValue> stack = new Array();
+		protected Node current;
 
 		Pattern (Node root, Processor processor, int total, boolean at) {
 			this.root = root;
@@ -775,12 +775,12 @@ public class JsonMatcher extends JsonSkimmer {
 		}
 	}
 
-	static class Node {
-		final Match[] matches;
-		final boolean processEach;
-		boolean processPop, starStar, nextStarStar;
-		@Null Node prev, next, backtrack;
-		int pop, dead = Integer.MAX_VALUE;
+	protected static class Node {
+		protected final Match[] matches;
+		protected final boolean processEach;
+		protected boolean processPop, starStar, nextStarStar;
+		protected @Null Node prev, next, backtrack;
+		protected int pop, dead = Integer.MAX_VALUE;
 
 		Node (Match[] matches, boolean processEach, Node backtrack) {
 			this.matches = matches;
@@ -822,10 +822,10 @@ public class JsonMatcher extends JsonSkimmer {
 		}
 	}
 
-	static class Match {
-		final String name;
-		int flags;
-		final boolean star, starStar, any;
+	protected static class Match {
+		protected final String name;
+		protected int flags;
+		protected final boolean star, starStar, any;
 
 		Match (String name, int flags, boolean star, boolean starStar) {
 			this.name = name;

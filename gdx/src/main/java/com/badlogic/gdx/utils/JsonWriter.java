@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 public class JsonWriter extends Writer {
 	static private final int none = 0, needsComma = 1, object = '}' << 1, array = ']' << 1, isObject = 0b1000000;
 
-	Writer writer;
+	protected Writer writer;
 	private final IntArray stack = new IntArray();
 	private int current;
 	private boolean named;

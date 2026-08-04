@@ -26,7 +26,7 @@ import com.badlogic.gdx.utils.JsonWriter.OutputType;
 public class JsonString {
 	static private final int none = 0, needsComma = 1, object = '}' << 1, array = ']' << 1, isObject = 0b1000000;
 
-	final StringBuilder buffer;
+	protected final StringBuilder buffer;
 	private final IntArray stack = new IntArray();
 	private int current;
 	private boolean named;

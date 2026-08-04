@@ -39,8 +39,8 @@ import static com.badlogic.gdx.utils.ObjectSet.tableSize;
 public class LongSet {
 	public int size;
 
-	long[] keyTable;
-	boolean hasZeroValue;
+	protected long[] keyTable;
+	protected boolean hasZeroValue;
 
 	private final float loadFactor;
 	private int threshold;
@@ -368,9 +368,9 @@ public class LongSet {
 
 		public boolean hasNext;
 
-		final LongSet set;
-		int nextIndex, currentIndex;
-		boolean valid = true;
+		protected final LongSet set;
+		protected int nextIndex, currentIndex;
+		protected boolean valid = true;
 
 		public LongSetIterator (LongSet set) {
 			this.set = set;

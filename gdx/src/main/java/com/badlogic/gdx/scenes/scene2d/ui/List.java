@@ -44,16 +44,16 @@ import com.badlogic.gdx.utils.Pool;
  * @author mzechner
  * @author Nathan Sweet */
 public class List<T> extends Widget implements Cullable, Styleable<List.ListStyle> {
-	ListStyle style;
-	final Array<T> items = new Array();
-	ArraySelection<T> selection = new ArraySelection(items);
+	protected ListStyle style;
+	protected final Array<T> items = new Array();
+	protected ArraySelection<T> selection = new ArraySelection(items);
 	private Rectangle cullingArea;
 	private float prefWidth, prefHeight;
-	float itemHeight;
+	protected float itemHeight;
 	private int alignment = Align.left;
-	int pressedIndex = -1, overIndex = -1;
+	protected int pressedIndex = -1, overIndex = -1;
 	private InputListener keyListener;
-	boolean typeToSelect;
+	protected boolean typeToSelect;
 
 	public List (Skin skin) {
 		this(skin.get(ListStyle.class));
@@ -71,8 +71,8 @@ public class List<T> extends Widget implements Cullable, Styleable<List.ListStyl
 		setSize(getPrefWidth(), getPrefHeight());
 
 		addListener(keyListener = new InputListener() {
-			long typeTimeout;
-			String prefix;
+			private long typeTimeout;
+			private String prefix;
 
 			public boolean keyDown (InputEvent event, int keycode) {
 				if (items.isEmpty()) return false;

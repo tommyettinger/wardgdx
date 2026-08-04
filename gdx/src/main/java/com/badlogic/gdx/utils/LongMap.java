@@ -41,11 +41,11 @@ import static com.badlogic.gdx.utils.ObjectSet.tableSize;
 public class LongMap<V> implements Iterable<LongMap.Entry<V>> {
 	public int size;
 
-	long[] keyTable;
-	V[] valueTable;
+	protected long[] keyTable;
+	protected V[] valueTable;
 
-	V zeroValue;
-	boolean hasZeroValue;
+	protected V zeroValue;
+	protected boolean hasZeroValue;
 
 	private final float loadFactor;
 	private int threshold;
