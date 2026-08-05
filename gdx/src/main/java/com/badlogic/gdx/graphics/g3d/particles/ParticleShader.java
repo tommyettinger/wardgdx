@@ -171,7 +171,7 @@ public class ParticleShader extends BaseShader {
 			}
 		};
 		public final static Setter worldViewTrans = new Setter() {
-			final Matrix4 temp = new Matrix4();
+			protected final Matrix4 temp = new Matrix4();
 
 			@Override
 			public boolean isGlobal (BaseShader shader, int inputID) {
@@ -301,7 +301,7 @@ public class ParticleShader extends BaseShader {
 		super.end();
 	}
 
-	Material currentMaterial;
+	protected Material currentMaterial;
 
 	protected void bindMaterial (final Renderable renderable) {
 		if (currentMaterial == renderable.material) return;

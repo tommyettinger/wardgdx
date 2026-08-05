@@ -26,9 +26,9 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
  * influencer to be updated, so it has to be placed at the end of the influencers list when creating a {@link ParticleController}.
  * @author Inferno */
 public class ParticleControllerFinalizerInfluencer extends Influencer {
-	FloatChannel positionChannel, scaleChannel, rotationChannel;
-	ObjectChannel<ParticleController> controllerChannel;
-	boolean hasScale, hasRotation;
+	protected FloatChannel positionChannel, scaleChannel, rotationChannel;
+	protected ObjectChannel<ParticleController> controllerChannel;
+	protected boolean hasScale, hasRotation;
 
 	public ParticleControllerFinalizerInfluencer () {
 	}

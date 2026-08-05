@@ -21,10 +21,10 @@ package com.badlogic.gdx.graphics.g2d;
  * @author Stefan Bachmann
  * @author Nathan Sweet */
 public class PolygonRegion {
-	final float[] textureCoords; // texture coordinates in atlas coordinates
-	final float[] vertices; // pixel coordinates relative to source image.
-	final short[] triangles;
-	final TextureRegion region;
+	protected final float[] textureCoords; // texture coordinates in atlas coordinates
+	protected final float[] vertices; // pixel coordinates relative to source image.
+	protected final short[] triangles;
+	protected final TextureRegion region;
 
 	/** Creates a PolygonRegion by triangulating the polygon coordinates in vertices and calculates uvs based on that.
 	 * TextureRegion can come from an atlas.

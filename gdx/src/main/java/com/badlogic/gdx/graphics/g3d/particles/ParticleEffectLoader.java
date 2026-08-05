@@ -149,7 +149,7 @@ public class ParticleEffectLoader
 	}
 
 	public static class ParticleEffectLoadParameter extends AssetLoaderParameters<ParticleEffect> {
-		Array<ParticleBatch<?>> batches;
+		protected Array<ParticleBatch<?>> batches;
 
 		public ParticleEffectLoadParameter (Array<ParticleBatch<?>> batches) {
 			this.batches = batches;
@@ -158,13 +158,13 @@ public class ParticleEffectLoader
 
 	public static class ParticleEffectSaveParameter extends AssetLoaderParameters<ParticleEffect> {
 		/** Optional parameters, but should be present to correctly load the settings */
-		Array<ParticleBatch<?>> batches;
+		protected Array<ParticleBatch<?>> batches;
 
 		/** Required parameters */
-		FileHandle file;
-		AssetManager manager;
-		JsonWriter.OutputType jsonOutputType;
-		boolean prettyPrint;
+		protected FileHandle file;
+		protected AssetManager manager;
+		protected JsonWriter.OutputType jsonOutputType;
+		protected boolean prettyPrint;
 
 		public ParticleEffectSaveParameter (FileHandle file, AssetManager manager, Array<ParticleBatch<?>> batches) {
 			this(file, manager, batches, JsonWriter.OutputType.minimal, false);

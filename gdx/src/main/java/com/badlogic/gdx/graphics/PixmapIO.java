@@ -322,9 +322,9 @@ public class PixmapIO {
 			deflater.end();
 		}
 
-		static class ChunkBuffer extends DataOutputStream {
-			final ByteArrayOutputStream buffer;
-			final CRC32 crc;
+		public static class ChunkBuffer extends DataOutputStream {
+			public final ByteArrayOutputStream buffer;
+			public final CRC32 crc;
 
 			ChunkBuffer (int initialSize) {
 				this(new ByteArrayOutputStream(initialSize), new CRC32());

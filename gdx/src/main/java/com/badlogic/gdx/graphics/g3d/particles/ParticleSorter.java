@@ -29,8 +29,8 @@ public abstract class ParticleSorter {
 
 	/** Using this class will not apply sorting */
 	public static class None extends ParticleSorter {
-		int currentCapacity = 0;
-		int[] indices;
+		protected int currentCapacity = 0;
+		protected int[] indices;
 
 		@Override
 		public void ensureCapacity (int capacity) {

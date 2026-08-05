@@ -33,7 +33,7 @@ public abstract class PrimitiveSpawnShapeValue extends SpawnShapeValue {
 	protected float spawnWidth, spawnWidthDiff;
 	protected float spawnHeight, spawnHeightDiff;
 	protected float spawnDepth, spawnDepthDiff;
-	boolean edges = false;
+	protected boolean edges = false;
 
 	public PrimitiveSpawnShapeValue () {
 		spawnWidthValue = new ScaledNumericValue();

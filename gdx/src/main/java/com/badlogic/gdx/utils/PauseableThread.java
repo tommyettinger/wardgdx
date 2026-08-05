@@ -21,9 +21,9 @@ package com.badlogic.gdx.utils;
  * 
  * @author mzechner */
 public class PauseableThread extends Thread {
-	final Runnable runnable;
-	boolean paused = false;
-	boolean exit = false;
+	protected final Runnable runnable;
+	protected boolean paused = false;
+	protected boolean exit = false;
 
 	/** Constructs a new thread setting the runnable which will be called repeatedly in a loop.
 	 * 

@@ -68,7 +68,7 @@ public class PointSpriteParticleBatch extends BufferedParticleBatch<PointSpriteC
 	}
 
 	private float[] vertices;
-	Renderable renderable;
+	protected Renderable renderable;
 	protected BlendingAttribute blendingAttribute;
 	protected DepthTestAttribute depthTestAttribute;
 

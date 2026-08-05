@@ -80,7 +80,7 @@ public class PolygonSpriteBatch implements PolygonBatch {
 	private boolean ownsShader;
 
 	private final Color color = new Color(1, 1, 1, 1);
-	float colorPacked = Color.WHITE_FLOAT_BITS;
+	protected float colorPacked = Color.WHITE_FLOAT_BITS;
 
 	/** Number of render calls since the last {@link #begin()}. **/
 	public int renderCalls = 0;

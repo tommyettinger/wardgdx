@@ -182,7 +182,7 @@ public class ParallelArray {
 	}
 
 	/** the channels added to the array */
-	Array<Channel> arrays;
+	protected Array<Channel> arrays;
 	/** the maximum amount of elements that this array can hold */
 	public int capacity;
 	/** the current amount of defined elements, do not change manually unless you know what you are doing. */

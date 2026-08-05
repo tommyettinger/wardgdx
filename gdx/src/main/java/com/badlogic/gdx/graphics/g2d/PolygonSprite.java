@@ -23,7 +23,7 @@ import com.badlogic.gdx.math.Rectangle;
 /** @author Stefan Bachmann
  * @author Nathan Sweet */
 public class PolygonSprite {
-	PolygonRegion region;
+	protected PolygonRegion region;
 	private float x, y;
 	private float width, height;
 	private float scaleX = 1f, scaleY = 1f;

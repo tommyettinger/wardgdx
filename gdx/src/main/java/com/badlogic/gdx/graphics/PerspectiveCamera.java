@@ -43,7 +43,7 @@ public class PerspectiveCamera extends Camera {
 		update();
 	}
 
-	final Vector3 tmp = new Vector3();
+	private final Vector3 tmp = new Vector3();
 
 	@Override
 	public void update () {

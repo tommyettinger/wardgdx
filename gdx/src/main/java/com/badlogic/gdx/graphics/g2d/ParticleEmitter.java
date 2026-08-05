@@ -92,7 +92,7 @@ public class ParticleEmitter {
 	private boolean behind;
 	private boolean additive = true;
 	private boolean premultipliedAlpha = false;
-	boolean cleansUpBlendFunction = true;
+	protected boolean cleansUpBlendFunction = true;
 
 	public ParticleEmitter () {
 		initialize();
@@ -1244,8 +1244,8 @@ public class ParticleEmitter {
 	}
 
 	static public class ParticleValue {
-		boolean active;
-		boolean alwaysActive;
+		protected boolean active;
+		protected boolean alwaysActive;
 
 		public void setAlwaysActive (boolean alwaysActive) {
 			this.alwaysActive = alwaysActive;
@@ -1379,9 +1379,9 @@ public class ParticleEmitter {
 
 	static public class ScaledNumericValue extends RangedNumericValue {
 		private float[] scaling = {1};
-		float[] timeline = {0};
+		protected float[] timeline = {0};
 		private float highMin, highMax;
-		boolean relative;
+		protected boolean relative;
 
 		public float newHighValue () {
 			return highMin + (highMax - highMin) * MathUtils.random();
@@ -1525,7 +1525,7 @@ public class ParticleEmitter {
 	}
 
 	static public class IndependentScaledNumericValue extends ScaledNumericValue {
-		boolean independent;
+		protected boolean independent;
 
 		public boolean isIndependent () {
 			return independent;
@@ -1590,7 +1590,7 @@ public class ParticleEmitter {
 		static private float[] temp = new float[4];
 
 		private float[] colors = {1, 1, 1};
-		float[] timeline = {0};
+		protected float[] timeline = {0};
 
 		public GradientColorValue () {
 			alwaysActive = true;
@@ -1677,9 +1677,9 @@ public class ParticleEmitter {
 	}
 
 	static public class SpawnShapeValue extends ParticleValue {
-		SpawnShape shape = SpawnShape.point;
-		boolean edges;
-		SpawnEllipseSide side = SpawnEllipseSide.both;
+		protected SpawnShape shape = SpawnShape.point;
+		protected boolean edges;
+		protected SpawnEllipseSide side = SpawnEllipseSide.both;
 
 		public SpawnShape getShape () {
 			return shape;

@@ -42,13 +42,13 @@ import com.badlogic.gdx.utils.Null;
  * @author Nathan Sweet */
 public class ProgressBar extends Widget implements Disableable, Styleable<ProgressBar.ProgressBarStyle> {
 	private ProgressBarStyle style;
-	float min, max, stepSize;
+	protected float min, max, stepSize;
 	private float value, animateFromValue;
-	float position;
-	final boolean vertical;
+	protected float position;
+	protected final boolean vertical;
 	private float animateDuration, animateTime;
 	private Interpolation animateInterpolation = Interpolation.linear, visualInterpolation = Interpolation.linear;
-	boolean disabled;
+	protected boolean disabled;
 	private boolean round = true, programmaticChangeEvents = true;
 
 	public ProgressBar (float min, float max, float stepSize, boolean vertical, Skin skin) {

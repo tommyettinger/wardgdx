@@ -102,7 +102,7 @@ public abstract class ParticleControllerInfluencer extends Influencer {
 			}
 		}
 
-		ParticleControllerPool pool;
+		protected ParticleControllerPool pool;
 
 		public Random () {
 			super();
@@ -160,7 +160,7 @@ public abstract class ParticleControllerInfluencer extends Influencer {
 	}
 
 	public Array<ParticleController> templates;
-	ObjectChannel<ParticleController> particleControllerChannel;
+	protected ObjectChannel<ParticleController> particleControllerChannel;
 
 	public ParticleControllerInfluencer () {
 		this.templates = new Array<>(true, 1, ParticleController[]::new);

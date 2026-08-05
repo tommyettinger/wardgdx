@@ -97,19 +97,19 @@ import com.badlogic.gdx.utils.OrderedMap;
  * @author Nathan Sweet
  * @author Rob Rendell */
 public class PixmapPacker implements Disposable {
-	boolean packToTexture;
-	boolean disposed;
-	int pageWidth, pageHeight;
-	Format pageFormat;
-	int padding;
-	boolean duplicateBorder;
-	boolean stripWhitespaceX, stripWhitespaceY;
-	int alphaThreshold;
-	Color transparentColor = new Color(0f, 0f, 0f, 0f);
-	final Array<Page> pages = new Array();
-	PackStrategy packStrategy;
+	protected boolean packToTexture;
+	protected boolean disposed;
+	protected int pageWidth, pageHeight;
+	protected Format pageFormat;
+	protected int padding;
+	protected boolean duplicateBorder;
+	protected boolean stripWhitespaceX, stripWhitespaceY;
+	protected int alphaThreshold;
+	protected Color transparentColor = new Color(0f, 0f, 0f, 0f);
+	protected final Array<Page> pages = new Array<>();
+	protected PackStrategy packStrategy;
 
-	static Pattern indexPattern = Pattern.compile("(.+)_(\\d+)$");
+	protected static Pattern indexPattern = Pattern.compile("(.+)_(\\d+)$");
 
 	/** Uses {@link GuillotineStrategy}.
 	 * @see PixmapPacker#PixmapPacker(int, int, Format, int, boolean, boolean, boolean, PackStrategy) */
@@ -463,11 +463,11 @@ public class PixmapPacker implements Disposable {
 	 * @author Nathan Sweet
 	 * @author Rob Rendell */
 	static public class Page {
-		OrderedMap<String, PixmapPackerRectangle> rects = new OrderedMap();
-		Pixmap image;
-		Texture texture;
-		final Array<String> addedRects = new Array();
-		boolean dirty;
+		protected OrderedMap<String, PixmapPackerRectangle> rects = new OrderedMap<>();
+		protected Pixmap image;
+		protected Texture texture;
+		protected final Array<String> addedRects = new Array<>();
+		protected boolean dirty;
 
 		/** Creates a new page filled with the color provided by the {@link PixmapPacker#getTransparentColor()} */
 		public Page (PixmapPacker packer) {
@@ -528,7 +528,7 @@ public class PixmapPacker implements Disposable {
 	 * @author Nathan Sweet
 	 * @author Rob Rendell */
 	static public class GuillotineStrategy implements PackStrategy {
-		Comparator<Pixmap> comparator;
+		protected Comparator<Pixmap> comparator;
 
 		public void sort (Array<Pixmap> pixmaps) {
 			if (comparator == null) {
@@ -615,8 +615,8 @@ public class PixmapPacker implements Disposable {
 			public boolean full;
 		}
 
-		static class GuillotinePage extends Page {
-			Node root;
+		protected static class GuillotinePage extends Page {
+			protected Node root;
 
 			public GuillotinePage (PixmapPacker packer) {
 				super(packer);
@@ -632,7 +632,7 @@ public class PixmapPacker implements Disposable {
 	/** Does bin packing by inserting in rows. This is good at packing images that have similar heights.
 	 * @author Nathan Sweet */
 	static public class SkylineStrategy implements PackStrategy {
-		Comparator<Pixmap> comparator;
+	 	protected Comparator<Pixmap> comparator;
 
 		public void sort (Array<Pixmap> images) {
 			if (comparator == null) {
@@ -695,16 +695,16 @@ public class PixmapPacker implements Disposable {
 			return page;
 		}
 
-		static class SkylinePage extends Page {
-			Array<Row> rows = new Array();
+		protected static class SkylinePage extends Page {
+			protected Array<Row> rows = new Array<>();
 
 			public SkylinePage (PixmapPacker packer) {
 				super(packer);
 
 			}
 
-			static class Row {
-				int x, y, height;
+			protected static class Row {
+				protected int x, y, height;
 			}
 		}
 	}
