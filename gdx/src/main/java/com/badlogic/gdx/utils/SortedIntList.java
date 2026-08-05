@@ -22,9 +22,9 @@ package com.badlogic.gdx.utils;
 public class SortedIntList<E> implements Iterable<SortedIntList.Node<E>> {
 	private NodePool<E> nodePool = new NodePool<>(); // avoid allocating nodes
 	private transient Iterator iterator;
-	int size = 0;
+	protected int size = 0;
 
-	Node<E> first;
+	protected Node<E> first;
 
 	/** Creates an ascending list */
 	public SortedIntList () {

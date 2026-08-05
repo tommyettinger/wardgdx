@@ -52,32 +52,32 @@ public class RemoteInput implements Runnable, Input {
 		void onDisconnected ();
 	}
 
-	class KeyEvent {
-		static final int KEY_DOWN = 0;
-		static final int KEY_UP = 1;
-		static final int KEY_TYPED = 2;
+	private static class KeyEvent {
+		private static final int KEY_DOWN = 0;
+		private static final int KEY_UP = 1;
+		private static final int KEY_TYPED = 2;
 
-		long timeStamp;
-		int type;
-		int keyCode;
-		char keyChar;
+		private long timeStamp;
+		private int type;
+		private int keyCode;
+		private char keyChar;
 	}
 
-	class TouchEvent {
-		static final int TOUCH_DOWN = 0;
-		static final int TOUCH_UP = 1;
-		static final int TOUCH_DRAGGED = 2;
+	private static class TouchEvent {
+		private static final int TOUCH_DOWN = 0;
+		private static final int TOUCH_UP = 1;
+		private static final int TOUCH_DRAGGED = 2;
 
-		long timeStamp;
-		int type;
-		int x;
-		int y;
-		int pointer;
+		private long timeStamp;
+		private int type;
+		private int x;
+		private int y;
+		private int pointer;
 	}
 
-	class EventTrigger implements Runnable {
-		TouchEvent touchEvent;
-		KeyEvent keyEvent;
+	private class EventTrigger implements Runnable {
+		private final TouchEvent touchEvent;
+		private final KeyEvent keyEvent;
 
 		public EventTrigger (TouchEvent touchEvent, KeyEvent keyEvent) {
 			this.touchEvent = touchEvent;
@@ -196,17 +196,17 @@ public class RemoteInput implements Runnable, Input {
 	private float remoteHeight = 0;
 	private boolean connected = false;
 	private RemoteInputListener listener;
-	int keyCount = 0;
-	boolean[] keys = new boolean[256];
-	boolean keyJustPressed = false;
-	boolean[] justPressedKeys = new boolean[256];
-	int[] deltaX = new int[MAX_TOUCHES];
-	int[] deltaY = new int[MAX_TOUCHES];
-	int[] touchX = new int[MAX_TOUCHES];
-	int[] touchY = new int[MAX_TOUCHES];
-	boolean isTouched[] = new boolean[MAX_TOUCHES];
-	boolean justTouched = false;
-	InputProcessor processor = null;
+	protected int keyCount = 0;
+	protected boolean[] keys = new boolean[256];
+	protected boolean keyJustPressed = false;
+	protected boolean[] justPressedKeys = new boolean[256];
+	protected int[] deltaX = new int[MAX_TOUCHES];
+	protected int[] deltaY = new int[MAX_TOUCHES];
+	protected int[] touchX = new int[MAX_TOUCHES];
+	protected int[] touchY = new int[MAX_TOUCHES];
+	protected boolean isTouched[] = new boolean[MAX_TOUCHES];
+	protected boolean justTouched = false;
+	protected InputProcessor processor = null;
 	private final int port;
 	public final String[] ips;
 

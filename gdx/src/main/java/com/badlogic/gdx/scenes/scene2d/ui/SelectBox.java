@@ -55,16 +55,16 @@ import com.badlogic.gdx.utils.Pool;
 public class SelectBox<T> extends Widget implements Disableable, Styleable<SelectBox.SelectBoxStyle> {
 	static final Vector2 temp = new Vector2();
 
-	SelectBoxStyle style;
-	final Array<T> items = new Array();
-	SelectBoxScrollPane<T> scrollPane;
+	protected SelectBoxStyle style;
+	protected final Array<T> items = new Array();
+	protected SelectBoxScrollPane<T> scrollPane;
 	private float prefWidth, prefHeight;
 	private ClickListener clickListener;
-	boolean disabled;
+	protected boolean disabled;
 	private int alignment = Align.left;
-	boolean selectedPrefWidth;
+	protected boolean selectedPrefWidth;
 
-	final ArraySelection<T> selection = new ArraySelection(items) {
+	protected final ArraySelection<T> selection = new ArraySelection(items) {
 		public boolean fireChangeEvent () {
 			if (selectedPrefWidth) invalidateHierarchy();
 			return super.fireChangeEvent();
@@ -420,10 +420,10 @@ public class SelectBox<T> extends Widget implements Disableable, Styleable<Selec
 	/** The scroll pane shown when a select box is open.
 	 * @author Nathan Sweet */
 	static public class SelectBoxScrollPane<T> extends ScrollPane {
-		final SelectBox<T> selectBox;
-		int maxListCount;
+		protected final SelectBox<T> selectBox;
+		protected int maxListCount;
 		private final Vector2 stagePosition = new Vector2();
-		final List<T> list;
+		protected final List<T> list;
 		private InputListener hideListener;
 		private Actor previousScrollFocus;
 

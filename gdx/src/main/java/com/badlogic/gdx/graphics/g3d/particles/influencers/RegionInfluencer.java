@@ -109,7 +109,7 @@ public abstract class RegionInfluencer extends Influencer {
 	/** Assigns a region to the particles using the particle life percent to calculate the current index in the
 	 * {@link RegionInfluencer#regions} array. */
 	public static class Animated extends RegionInfluencer {
-		FloatChannel lifeChannel;
+		protected FloatChannel lifeChannel;
 
 		public Animated () {
 		}
@@ -204,7 +204,7 @@ public abstract class RegionInfluencer extends Influencer {
 	}
 
 	public Array<AspectTextureRegion> regions;
-	FloatChannel regionChannel;
+	protected FloatChannel regionChannel;
 	public String atlasName;
 
 	public RegionInfluencer (int regionsCount) {

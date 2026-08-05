@@ -14,14 +14,14 @@ import java.util.Iterator;
  * @author Nathan Sweet */
 public class Selection<T> implements Disableable, Iterable<T> {
 	private @Null Actor actor;
-	final OrderedSet<T> selected = new OrderedSet();
-	private final OrderedSet<T> old = new OrderedSet();
-	boolean isDisabled;
+	protected final OrderedSet<T> selected = new OrderedSet<>();
+	private final OrderedSet<T> old = new OrderedSet<>();
+	protected boolean isDisabled;
 	private boolean toggle;
-	boolean multiple;
-	boolean required;
+	protected boolean multiple;
+	protected boolean required;
 	private boolean programmaticChangeEvents = true;
-	@Null T lastSelected;
+	protected @Null T lastSelected;
 
 	/** @param actor An actor to fire {@link ChangeEvent} on when the selection changes, or null. */
 	public void setActor (@Null Actor actor) {

@@ -30,8 +30,8 @@ import com.badlogic.gdx.utils.JsonValue;
 public class SpawnInfluencer extends Influencer {
 
 	public SpawnShapeValue spawnShapeValue;
-	FloatChannel positionChannel;
-	FloatChannel rotationChannel;
+	protected FloatChannel positionChannel;
+	protected FloatChannel rotationChannel;
 
 	public SpawnInfluencer () {
 		spawnShapeValue = new PointSpawnShapeValue();

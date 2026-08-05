@@ -53,33 +53,33 @@ public class ScrollPane extends WidgetGroup implements Styleable<ScrollPane.Scro
 	private ScrollPaneStyle style;
 	private Actor actor;
 
-	final Rectangle actorArea = new Rectangle();
-	final Rectangle hScrollBounds = new Rectangle(), hKnobBounds = new Rectangle();
-	final Rectangle vScrollBounds = new Rectangle(), vKnobBounds = new Rectangle();
+	protected final Rectangle actorArea = new Rectangle();
+	protected final Rectangle hScrollBounds = new Rectangle(), hKnobBounds = new Rectangle();
+	protected final Rectangle vScrollBounds = new Rectangle(), vKnobBounds = new Rectangle();
 	private final Rectangle actorCullingArea = new Rectangle();
 	private ActorGestureListener flickScrollListener;
 
-	boolean scrollX, scrollY;
-	boolean vScrollOnRight = true, hScrollOnBottom = true;
-	float amountX, amountY;
-	float visualAmountX, visualAmountY;
-	float maxX, maxY;
-	boolean touchScrollH, touchScrollV;
-	final Vector2 lastPoint = new Vector2();
-	boolean fadeScrollBars = true, smoothScrolling = true, scrollBarTouch = true;
-	float fadeAlpha, fadeAlphaSeconds = 1, fadeDelay, fadeDelaySeconds = 1;
-	boolean cancelTouchFocus = true;
+	protected boolean scrollX, scrollY;
+	protected boolean vScrollOnRight = true, hScrollOnBottom = true;
+	protected float amountX, amountY;
+	protected float visualAmountX, visualAmountY;
+	protected float maxX, maxY;
+	protected boolean touchScrollH, touchScrollV;
+	protected final Vector2 lastPoint = new Vector2();
+	protected boolean fadeScrollBars = true, smoothScrolling = true, scrollBarTouch = true;
+	protected float fadeAlpha, fadeAlphaSeconds = 1, fadeDelay, fadeDelaySeconds = 1;
+	protected boolean cancelTouchFocus = true;
 
-	boolean flickScroll = true;
-	float flingTime = 1f, flingTimer, velocityX, velocityY;
+	protected boolean flickScroll = true;
+	protected float flingTime = 1f, flingTimer, velocityX, velocityY;
 	private boolean overscrollX = true, overscrollY = true;
 	private float overscrollDistance = 50, overscrollSpeedMin = 30, overscrollSpeedMax = 200;
 	private boolean forceScrollX, forceScrollY;
-	boolean disableX, disableY;
+	protected boolean disableX, disableY;
 	private boolean clamp = true;
 	private boolean scrollbarsOnTop;
 	private boolean variableSizeKnobs = true;
-	int draggingPointer = -1;
+	protected int draggingPointer = -1;
 
 	/** @param actor May be null. */
 	public ScrollPane (@Null Actor actor) {

@@ -868,8 +868,8 @@ public class ShaderProgram implements Disposable {
 		gl.glVertexAttrib4f(location, value1, value2, value3, value4);
 	}
 
-	IntBuffer params = BufferUtils.newIntBuffer(1);
-	IntBuffer type = BufferUtils.newIntBuffer(1);
+	protected IntBuffer params = BufferUtils.newIntBuffer(1);
+	protected IntBuffer type = BufferUtils.newIntBuffer(1);
 
 	private void fetchUniforms () {
 		((Buffer)params).clear();

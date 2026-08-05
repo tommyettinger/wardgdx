@@ -35,7 +35,7 @@ public class Sprite extends TextureRegion {
 	public static final int VERTEX_SIZE = 2 + 1 + 2;
 	public static final int SPRITE_SIZE = 4 * VERTEX_SIZE;
 
-	final float[] vertices = new float[SPRITE_SIZE];
+	protected final float[] vertices = new float[SPRITE_SIZE];
 	private final Color color = new Color(1, 1, 1, 1);
 	private float packedColor = Color.WHITE_FLOAT_BITS;
 	private float x, y;

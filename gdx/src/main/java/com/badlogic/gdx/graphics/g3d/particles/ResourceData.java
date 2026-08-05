@@ -50,9 +50,10 @@ public class ResourceData<T> implements Json.Serializable {
 	/** Contains all the saved data. {@link #data} is a map which link an asset name to its instance. {@link #assets} is an array
 	 * of indices addressing a given {@link com.badlogic.gdx.graphics.g3d.particles.ResourceData.AssetData} in the
 	 * {@link ResourceData} */
-	public static class SaveData implements Json.Serializable {
-		ObjectMap<String, Object> data;
-		IntArray assets;
+	@SuppressWarnings("rawtypes")
+    public static class SaveData implements Json.Serializable {
+		protected ObjectMap<String, Object> data;
+		protected IntArray assets;
 		private int loadIndex;
 		protected ResourceData resources;
 
@@ -144,7 +145,7 @@ public class ResourceData<T> implements Json.Serializable {
 	private Array<SaveData> data;
 
 	/** Shared assets among all the configurable objects */
-	Array<AssetData> sharedAssets;
+	protected Array<AssetData> sharedAssets;
 	private int currentLoadIndex;
 	public T resource;
 

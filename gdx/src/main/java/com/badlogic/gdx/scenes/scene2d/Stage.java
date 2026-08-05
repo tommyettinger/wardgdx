@@ -65,7 +65,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
  * @author Nathan Sweet */
 public class Stage extends InputAdapter implements Disposable {
 	/** True if any actor has ever had debug enabled. */
-	static boolean debug;
+	protected static boolean debug;
 
 	protected PoolManager pools = new PoolManager();
 	private Viewport viewport;
@@ -79,7 +79,7 @@ public class Stage extends InputAdapter implements Disposable {
 	private int mouseScreenX, mouseScreenY;
 	private @Null Actor mouseOverActor;
 	private @Null Actor keyboardFocus, scrollFocus;
-	final SnapshotArray<TouchFocus> touchFocuses = new SnapshotArray<>(true, 4, TouchFocus[]::new);
+	protected final SnapshotArray<TouchFocus> touchFocuses = new SnapshotArray<>(true, 4, TouchFocus[]::new);
 	private boolean actionsRequestRendering = true;
 
 	private ShapeRenderer debugShapes;
@@ -883,9 +883,9 @@ public class Stage extends InputAdapter implements Disposable {
 	/** Internal class for managing touch focus. Public only for GWT.
 	 * @author Nathan Sweet */
 	public static final class TouchFocus implements Poolable {
-		EventListener listener;
-		Actor listenerActor, target;
-		int pointer, button;
+		private EventListener listener;
+		private Actor listenerActor, target;
+		private int pointer, button;
 
 		public void reset () {
 			listenerActor = null;

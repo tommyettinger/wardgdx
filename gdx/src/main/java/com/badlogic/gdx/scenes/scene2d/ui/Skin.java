@@ -57,9 +57,9 @@ import com.badlogic.gdx.utils.reflect.ReflectionException;
  * See the <a href="https://libgdx.com/wiki/graphics/2d/scene2d/skin">documentation</a> for more.
  * @author Nathan Sweet */
 public class Skin implements Disposable {
-	IdentityMap<Class, ObjectMap<String, Object>> resources = new IdentityMap();
-	TextureAtlas atlas;
-	float scale = 1;
+	protected IdentityMap<Class, ObjectMap<String, Object>> resources = new IdentityMap();
+	protected TextureAtlas atlas;
+	protected float scale = 1;
 
 	private final ObjectMap<String, Class> jsonClassTags = new ObjectMap(defaultTagClasses.length);
 	{

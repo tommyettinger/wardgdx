@@ -29,8 +29,8 @@ import com.badlogic.gdx.utils.JsonValue;
 public abstract class SimpleInfluencer extends Influencer {
 
 	public ScaledNumericValue value;
-	FloatChannel valueChannel, interpolationChannel, lifeChannel;
-	ChannelDescriptor valueChannelDescriptor;
+	protected FloatChannel valueChannel, interpolationChannel, lifeChannel;
+	protected ChannelDescriptor valueChannelDescriptor;
 
 	public SimpleInfluencer () {
 		value = new ScaledNumericValue();

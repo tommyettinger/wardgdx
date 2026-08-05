@@ -454,8 +454,8 @@ public class Queue<T> implements Iterable<T> {
 	static public class QueueIterator<T> implements Iterator<T>, Iterable<T> {
 		private final Queue<T> queue;
 		private final boolean allowRemove;
-		int index;
-		boolean valid = true;
+		protected int index;
+		protected boolean valid = true;
 
 // QueueIterable<T> iterable;
 

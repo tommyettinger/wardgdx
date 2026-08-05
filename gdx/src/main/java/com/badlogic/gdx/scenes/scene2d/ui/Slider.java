@@ -38,9 +38,9 @@ import com.badlogic.gdx.utils.Null;
  * @author mzechner
  * @author Nathan Sweet */
 public class Slider extends ProgressBar {
-	int button = -1;
-	int draggingPointer = -1;
-	boolean mouseOver;
+	protected int button = -1;
+	protected int draggingPointer = -1;
+	protected boolean mouseOver;
 	private Interpolation visualInterpolationInverse = Interpolation.linear;
 	private float[] snapValues;
 	private float threshold;

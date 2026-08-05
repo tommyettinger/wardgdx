@@ -44,19 +44,19 @@ import com.badlogic.gdx.utils.Null;
  * @author mzechner
  * @author Nathan Sweet */
 public class SplitPane extends WidgetGroup implements Styleable<SplitPane.SplitPaneStyle> {
-	SplitPaneStyle style;
+	protected SplitPaneStyle style;
 	private @Null Actor firstWidget, secondWidget;
-	boolean vertical;
-	float splitAmount = 0.5f, minAmount, maxAmount = 1;
+	protected boolean vertical;
+	protected float splitAmount = 0.5f, minAmount, maxAmount = 1;
 
 	private final Rectangle firstWidgetBounds = new Rectangle();
 	private final Rectangle secondWidgetBounds = new Rectangle();
-	final Rectangle handleBounds = new Rectangle();
-	boolean cursorOverHandle;
+	protected final Rectangle handleBounds = new Rectangle();
+	protected boolean cursorOverHandle;
 	private final Rectangle tempScissors = new Rectangle();
 
-	Vector2 lastPoint = new Vector2();
-	Vector2 handlePosition = new Vector2();
+	protected Vector2 lastPoint = new Vector2();
+	protected Vector2 handlePosition = new Vector2();
 
 	/** @param firstWidget May be null.
 	 * @param secondWidget May be null. */
@@ -83,7 +83,7 @@ public class SplitPane extends WidgetGroup implements Styleable<SplitPane.SplitP
 
 	private void initialize () {
 		addListener(new InputListener() {
-			int draggingPointer = -1;
+			private int draggingPointer = -1;
 
 			public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
 				if (draggingPointer != -1) return false;
