@@ -92,7 +92,7 @@ public class ShaderProgram implements Disposable {
 	public static String prependFragmentCode = "";
 
 	/** the list of currently available shaders **/
-	private final static ObjectMap<Application, Array<ShaderProgram>> shaders = new ObjectMap<Application, Array<ShaderProgram>>();
+	private final static ObjectMap<Application, Array<ShaderProgram>> shaders = new ObjectMap<>();
 
 	/** the log **/
 	private String log = "";
@@ -101,25 +101,25 @@ public class ShaderProgram implements Disposable {
 	private boolean isCompiled;
 
 	/** uniform lookup **/
-	private final ObjectIntMap<String> uniforms = new ObjectIntMap<String>();
+	private final ObjectIntMap<String> uniforms = new ObjectIntMap<>();
 
 	/** uniform types **/
-	private final ObjectIntMap<String> uniformTypes = new ObjectIntMap<String>();
+	private final ObjectIntMap<String> uniformTypes = new ObjectIntMap<>();
 
 	/** uniform sizes **/
-	private final ObjectIntMap<String> uniformSizes = new ObjectIntMap<String>();
+	private final ObjectIntMap<String> uniformSizes = new ObjectIntMap<>();
 
 	/** uniform names **/
 	private String[] uniformNames;
 
 	/** attribute lookup **/
-	private final ObjectIntMap<String> attributes = new ObjectIntMap<String>();
+	private final ObjectIntMap<String> attributes = new ObjectIntMap<>();
 
 	/** attribute types **/
-	private final ObjectIntMap<String> attributeTypes = new ObjectIntMap<String>();
+	private final ObjectIntMap<String> attributeTypes = new ObjectIntMap<>();
 
 	/** attribute sizes **/
-	private final ObjectIntMap<String> attributeSizes = new ObjectIntMap<String>();
+	private final ObjectIntMap<String> attributeSizes = new ObjectIntMap<>();
 
 	/** attribute names **/
 	private String[] attributeNames;
@@ -815,7 +815,7 @@ public class ShaderProgram implements Disposable {
 
 	private void addManagedShader (Application app, ShaderProgram shaderProgram) {
 		Array<ShaderProgram> managedResources = shaders.get(app);
-		if (managedResources == null) managedResources = new Array<ShaderProgram>();
+		if (managedResources == null) managedResources = new Array<>();
 		managedResources.add(shaderProgram);
 		shaders.put(app, managedResources);
 	}

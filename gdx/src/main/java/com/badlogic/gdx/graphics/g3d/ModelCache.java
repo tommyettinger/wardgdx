@@ -59,8 +59,8 @@ public class ModelCache implements Disposable, RenderableProvider {
 	 * @author Xoppa */
 	public static class SimpleMeshPool implements MeshPool {
 		// FIXME Make a better (preferable JNI) MeshPool implementation
-		private Array<Mesh> freeMeshes = new Array<Mesh>();
-		private Array<Mesh> usedMeshes = new Array<Mesh>();
+		private Array<Mesh> freeMeshes = new Array<>();
+		private Array<Mesh> usedMeshes = new Array<>();
 
 		@Override
 		public void flush () {
@@ -100,8 +100,8 @@ public class ModelCache implements Disposable, RenderableProvider {
 	/** A tight {@link MeshPool} implementation, which is typically used for static meshes (create once, use many).
 	 * @author Xoppa */
 	public static class TightMeshPool implements MeshPool {
-		private Array<Mesh> freeMeshes = new Array<Mesh>();
-		private Array<Mesh> usedMeshes = new Array<Mesh>();
+		private Array<Mesh> freeMeshes = new Array<>();
+		private Array<Mesh> usedMeshes = new Array<>();
 
 		@Override
 		public void flush () {
@@ -161,7 +161,7 @@ public class ModelCache implements Disposable, RenderableProvider {
 		}
 	}
 
-	private Array<Renderable> renderables = new Array<Renderable>();
+	private Array<Renderable> renderables = new Array<>();
 	private FlushablePool<Renderable> renderablesPool = new FlushablePool<Renderable>() {
 		@Override
 		protected Renderable newObject () {
@@ -175,8 +175,8 @@ public class ModelCache implements Disposable, RenderableProvider {
 		}
 	};
 
-	private Array<Renderable> items = new Array<Renderable>();
-	private Array<Renderable> tmp = new Array<Renderable>();
+	private Array<Renderable> items = new Array<>();
+	private Array<Renderable> tmp = new Array<>();
 
 	private MeshBuilder meshBuilder;
 	private boolean building;

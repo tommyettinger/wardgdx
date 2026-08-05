@@ -41,11 +41,10 @@ import static com.badlogic.gdx.utils.ObjectSet.tableSize;
 public class ObjectIntMap<K> implements Iterable<ObjectIntMap.Entry<K>> {
 	public int size;
 
-	K[] keyTable;
-	int[] valueTable;
-
-	float loadFactor;
-	int threshold;
+	protected K[] keyTable;
+	protected int[] valueTable;
+	protected float loadFactor;
+	protected int threshold;
 
 	/** Used by {@link #place(Object)} to bit shift the upper bits of a {@code long} into a usable range (&gt;= 0 and &lt;=
 	 * {@link #mask}). The shift can be negative, which is convenient to match the number of bits in mask: if mask is a 7-bit
@@ -62,9 +61,9 @@ public class ObjectIntMap<K> implements Iterable<ObjectIntMap.Entry<K>> {
 	 * hash. */
 	protected int mask;
 
-	transient Entries entries1, entries2;
-	transient Values values1, values2;
-	transient Keys keys1, keys2;
+	protected transient Entries<K> entries1, entries2;
+	protected transient Values values1, values2;
+	protected transient Keys<K> keys1, keys2;
 
 	/** Creates a new map with an initial capacity of 51 and a load factor of 0.8. */
 	public ObjectIntMap () {
@@ -530,7 +529,7 @@ public class ObjectIntMap<K> implements Iterable<ObjectIntMap.Entry<K>> {
 	}
 
 	static public class Entries<K> extends MapIterator<K> implements Iterable<Entry<K>>, Iterator<Entry<K>> {
-		Entry<K> entry = new Entry<K>();
+		protected Entry<K> entry = new Entry<>();
 
 		public Entries (ObjectIntMap<K> map) {
 			super(map);
@@ -622,7 +621,7 @@ public class ObjectIntMap<K> implements Iterable<ObjectIntMap.Entry<K>> {
 
 		/** Returns a new array containing the remaining keys. */
 		public Array<K> toArray () {
-			return toArray(new Array<K>(true, map.size));
+			return toArray(new Array<>(true, map.size));
 		}
 
 		/** Adds the remaining keys to the array. */

@@ -30,13 +30,13 @@ public final class WeightMeshSpawnShapeValue extends MeshSpawnShapeValue {
 
 	public WeightMeshSpawnShapeValue (WeightMeshSpawnShapeValue value) {
 		super(value);
-		distribution = new CumulativeDistribution<Triangle>();
+		distribution = new CumulativeDistribution<>();
 		load(value);
 	}
 
 	public WeightMeshSpawnShapeValue () {
 		super();
-		distribution = new CumulativeDistribution<Triangle>();
+		distribution = new CumulativeDistribution<>();
 	}
 
 	@Override

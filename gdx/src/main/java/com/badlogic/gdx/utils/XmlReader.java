@@ -647,7 +647,7 @@ public class XmlReader {
 		/** @param name the name of the children
 		 * @return the children with the given name or an empty {@link Array} */
 		public Array<Element> getChildrenByName (String name) {
-			Array<Element> result = new Array<Element>();
+			Array<Element> result = new Array<>();
 			if (children == null) return result;
 			for (int i = 0; i < children.size; i++) {
 				Element child = children.get(i);
@@ -659,7 +659,7 @@ public class XmlReader {
 		/** @param name the name of the children
 		 * @return the children with the given name or an empty {@link Array} */
 		public Array<Element> getChildrenByNameRecursively (String name) {
-			Array<Element> result = new Array<Element>();
+			Array<Element> result = new Array<>();
 			getChildrenByNameRecursively(name, result);
 			return result;
 		}

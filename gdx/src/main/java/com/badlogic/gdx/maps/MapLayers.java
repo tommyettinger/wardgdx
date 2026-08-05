@@ -23,7 +23,7 @@ import com.badlogic.gdx.utils.reflect.ClassReflection;
 
 /** Ordered list of {@link MapLayer} instances owned by a {@link Map} */
 public class MapLayers implements Iterable<MapLayer> {
-	private Array<MapLayer> layers = new Array<MapLayer>();
+	private Array<MapLayer> layers = new Array<>();
 
 	/** @param index
 	 * @return the MapLayer at the specified index */
@@ -81,7 +81,7 @@ public class MapLayers implements Iterable<MapLayer> {
 	/** @param type
 	 * @return array with all the layers matching type */
 	public <T extends MapLayer> Array<T> getByType (Class<T> type) {
-		return getByType(type, new Array<T>());
+		return getByType(type, new Array<>());
 	}
 
 	/** @param type

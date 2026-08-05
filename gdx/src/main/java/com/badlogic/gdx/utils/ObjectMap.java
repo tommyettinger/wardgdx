@@ -43,11 +43,11 @@ public class ObjectMap<K, V> implements Iterable<ObjectMap.Entry<K, V>> {
 
 	public int size;
 
-	K[] keyTable;
-	V[] valueTable;
+	protected K[] keyTable;
+	protected V[] valueTable;
 
-	float loadFactor;
-	int threshold;
+	protected float loadFactor;
+	protected int threshold;
 
 	/** Used by {@link #place(Object)} to bit shift the upper bits of a {@code long} into a usable range (&gt;= 0 and &lt;=
 	 * {@link #mask}). The shift can be negative, which is convenient to match the number of bits in mask: if mask is a 7-bit
@@ -64,9 +64,9 @@ public class ObjectMap<K, V> implements Iterable<ObjectMap.Entry<K, V>> {
 	 * hash. */
 	protected int mask;
 
-	transient Entries entries1, entries2;
-	transient Values values1, values2;
-	transient Keys keys1, keys2;
+	protected transient Entries<K, V> entries1, entries2;
+	protected transient Values<V> values1, values2;
+	protected transient Keys<K> keys1, keys2;
 
 	/** Creates a new map with an initial capacity of 51 and a load factor of 0.8. */
 	public ObjectMap () {
@@ -546,7 +546,7 @@ public class ObjectMap<K, V> implements Iterable<ObjectMap.Entry<K, V>> {
 	}
 
 	static public class Entries<K, V> extends MapIterator<K, V, Entry<K, V>> {
-		Entry<K, V> entry = new Entry<K, V>();
+	 	protected Entry<K, V> entry = new Entry<>();
 
 		public Entries (ObjectMap<K, V> map) {
 			super(map);
@@ -635,7 +635,7 @@ public class ObjectMap<K, V> implements Iterable<ObjectMap.Entry<K, V>> {
 
 		/** Returns a new array containing the remaining keys. */
 		public Array<K> toArray () {
-			return toArray(new Array<K>(true, map.size));
+			return toArray(new Array<>(true, map.size));
 		}
 
 		/** Adds the remaining keys to the array. */

@@ -81,10 +81,10 @@ public class ObjLoader extends ModelLoader<ObjLoader.ObjLoaderParameters> {
 		}
 	}
 
-	final FloatArray verts = new FloatArray(300);
-	final FloatArray norms = new FloatArray(300);
-	final FloatArray uvs = new FloatArray(200);
-	final Array<Group> groups = new Array<Group>(10);
+	protected final FloatArray verts = new FloatArray(300);
+	protected final FloatArray norms = new FloatArray(300);
+	protected final FloatArray uvs = new FloatArray(200);
+	protected final Array<Group> groups = new Array<>(10);
 
 	public ObjLoader () {
 		this(null);
@@ -242,7 +242,7 @@ public class ObjLoader extends ModelLoader<ObjLoader.ObjLoaderParameters> {
 				}
 			}
 
-			Array<VertexAttribute> attributes = new Array<VertexAttribute>();
+			Array<VertexAttribute> attributes = new Array<>();
 			attributes.add(new VertexAttribute(Usage.Position, 3, ShaderProgram.POSITION_ATTRIBUTE));
 			if (hasNorms) attributes.add(new VertexAttribute(Usage.Normal, 3, ShaderProgram.NORMAL_ATTRIBUTE));
 			if (hasUVs) attributes.add(new VertexAttribute(Usage.TextureCoordinates, 2, ShaderProgram.TEXCOORD_ATTRIBUTE + "0"));
@@ -322,7 +322,7 @@ public class ObjLoader extends ModelLoader<ObjLoader.ObjLoaderParameters> {
 
 		Group (String name) {
 			this.name = name;
-			this.faces = new Array<Integer>(200);
+			this.faces = new Array<>(200);
 			this.numFaces = 0;
 			this.mat = new Material("");
 			this.materialName = "default";
@@ -331,7 +331,7 @@ public class ObjLoader extends ModelLoader<ObjLoader.ObjLoaderParameters> {
 }
 
 class MtlLoader {
-	public Array<ModelMaterial> materials = new Array<ModelMaterial>();
+	public Array<ModelMaterial> materials = new Array<>();
 
 	/** loads .mtl file */
 	public void load (FileHandle file) {
@@ -464,7 +464,7 @@ class MtlLoader {
 				ModelTexture tex = new ModelTexture();
 				tex.usage = usage;
 				tex.fileName = texFilename;
-				if (mat.textures == null) mat.textures = new Array<ModelTexture>(1);
+				if (mat.textures == null) mat.textures = new Array<>(1);
 				mat.textures.add(tex);
 			}
 		}

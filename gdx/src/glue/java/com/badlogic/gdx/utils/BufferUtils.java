@@ -37,7 +37,7 @@ public final class BufferUtils {
 	private BufferUtils () {
 	}
 
-	static Array<ByteBuffer> unsafeBuffers = new Array<ByteBuffer>();
+	static Array<ByteBuffer> unsafeBuffers = new Array<>();
 	static int allocatedUnsafe = 0;
 
 	/** Copies numFloats floats from src starting at offset to dst. Dst is assumed to be a direct {@link Buffer}. The method will

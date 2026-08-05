@@ -36,7 +36,7 @@ public class CubemapAttribute extends Attribute {
 	public CubemapAttribute (final long type) {
 		super(type);
 		if (!is(type)) throw new GdxRuntimeException("Invalid type specified");
-		textureDescription = new TextureDescriptor<Cubemap>();
+		textureDescription = new TextureDescriptor<>();
 	}
 
 	public <T extends Cubemap> CubemapAttribute (final long type, final TextureDescriptor<T> textureDescription) {

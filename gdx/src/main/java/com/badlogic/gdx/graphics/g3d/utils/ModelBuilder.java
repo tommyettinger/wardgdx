@@ -44,7 +44,7 @@ public class ModelBuilder {
 	/** The node currently being build */
 	protected Node node;
 	/** The mesh builders created between begin and end */
-	protected Array<MeshBuilder> builders = new Array<MeshBuilder>();
+	protected Array<MeshBuilder> builders = new Array<>();
 
 	private Matrix4 tmpTransform = new Matrix4();
 

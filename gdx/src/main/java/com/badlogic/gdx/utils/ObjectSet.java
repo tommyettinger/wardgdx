@@ -41,10 +41,9 @@ import com.badlogic.gdx.math.MathUtils;
 public class ObjectSet<T> implements Iterable<T> {
 	public int size;
 
-	T[] keyTable;
-
-	float loadFactor;
-	int threshold;
+	protected T[] keyTable;
+	protected float loadFactor;
+	protected int threshold;
 
 	/** Used by {@link #place(Object)} to bit shift the upper bits of a {@code long} into a usable range (&gt;= 0 and &lt;=
 	 * {@link #mask}). The shift can be negative, which is convenient to match the number of bits in mask: if mask is a 7-bit
@@ -61,7 +60,7 @@ public class ObjectSet<T> implements Iterable<T> {
 	 * hash. */
 	protected int mask;
 
-	private transient ObjectSetIterator iterator1, iterator2;
+	protected transient ObjectSetIterator<T> iterator1, iterator2;
 
 	/** Creates a new set with an initial capacity of 51 and a load factor of 0.8. */
 	public ObjectSet () {
@@ -347,7 +346,7 @@ public class ObjectSet<T> implements Iterable<T> {
 	}
 
 	static public <T> ObjectSet<T> with (T... array) {
-		ObjectSet<T> set = new ObjectSet<T>(array.length);
+		ObjectSet<T> set = new ObjectSet<>(array.length);
 		set.addAll(array);
 		return set;
 	}
@@ -362,9 +361,9 @@ public class ObjectSet<T> implements Iterable<T> {
 	static public class ObjectSetIterator<K> implements Iterable<K>, Iterator<K> {
 		public boolean hasNext;
 
-		final ObjectSet<K> set;
-		int nextIndex, currentIndex;
-		boolean valid = true;
+		protected final ObjectSet<K> set;
+		protected int nextIndex, currentIndex;
+		protected boolean valid = true;
 
 		public ObjectSetIterator (ObjectSet<K> set) {
 			this.set = set;
@@ -435,7 +434,7 @@ public class ObjectSet<T> implements Iterable<T> {
 
 		/** Returns a new array containing the remaining values. */
 		public Array<K> toArray () {
-			return toArray(new Array<K>(true, set.size));
+			return toArray(new Array<>(true, set.size));
 		}
 	}
 }

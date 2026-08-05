@@ -135,7 +135,7 @@ public class BillboardParticleBatch extends BufferedParticleBatch<BillboardContr
 	public BillboardParticleBatch (AlignMode mode, boolean useGPU, int capacity, BlendingAttribute blendingAttribute,
 		DepthTestAttribute depthTestAttribute) {
 		super(BillboardControllerRenderData[]::new);
-		renderables = new Array<Renderable>();
+		renderables = new Array<>();
 		renderablePool = new RenderablePool();
 		this.blendingAttribute = blendingAttribute;
 		this.depthTestAttribute = depthTestAttribute;

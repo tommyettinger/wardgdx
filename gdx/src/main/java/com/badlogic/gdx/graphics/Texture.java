@@ -47,7 +47,7 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
  * @author badlogicgames@gmail.com */
 public class Texture extends GLTexture {
 	private static AssetManager assetManager;
-	final static Map<Application, Array<Texture>> managedTextures = new HashMap<Application, Array<Texture>>();
+	final static Map<Application, Array<Texture>> managedTextures = new HashMap<>();
 
 	public enum TextureFilter {
 		/** Fetch the nearest texel that best maps to the pixel on screen. */
@@ -233,7 +233,7 @@ public class Texture extends GLTexture {
 
 	private static void addManagedTexture (Application app, Texture texture) {
 		Array<Texture> managedTextureArray = managedTextures.get(app);
-		if (managedTextureArray == null) managedTextureArray = new Array<Texture>();
+		if (managedTextureArray == null) managedTextureArray = new Array<>();
 		managedTextureArray.add(texture);
 		managedTextures.put(app, managedTextureArray);
 	}
@@ -261,7 +261,7 @@ public class Texture extends GLTexture {
 
 			// next we go through each texture and reload either directly or via the
 			// asset manager.
-			Array<Texture> textures = new Array<Texture>(managedTextureArray);
+			Array<Texture> textures = new Array<>(managedTextureArray);
 			for (Texture texture : textures) {
 				String fileName = assetManager.getAssetFileName(texture);
 				if (fileName == null) {

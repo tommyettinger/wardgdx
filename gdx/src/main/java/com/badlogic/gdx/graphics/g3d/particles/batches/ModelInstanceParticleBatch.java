@@ -30,7 +30,7 @@ public class ModelInstanceParticleBatch implements ParticleBatch<ModelInstanceCo
 	protected int bufferedParticlesCount;
 
 	public ModelInstanceParticleBatch () {
-		controllersRenderData = new Array<ModelInstanceControllerRenderData>(false, 5);
+		controllersRenderData = new Array<>(false, 5);
 	}
 
 	@Override

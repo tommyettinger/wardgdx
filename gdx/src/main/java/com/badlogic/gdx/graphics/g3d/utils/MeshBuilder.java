@@ -99,7 +99,7 @@ public class MeshBuilder implements MeshPartBuilder {
 	/** The meshpart currently being created */
 	protected MeshPart part;
 	/** The parts created between begin and end */
-	protected Array<MeshPart> parts = new Array<MeshPart>();
+	protected Array<MeshPart> parts = new Array<>();
 	/** The color used if no vertex color is specified. */
 	protected final Color color = new Color(Color.WHITE);
 	protected boolean hasColor = false;
@@ -118,7 +118,7 @@ public class MeshBuilder implements MeshPartBuilder {
 	/** @param usage bitwise mask of the {@link com.badlogic.gdx.graphics.VertexAttributes.Usage}, only Position, Color, Normal and
 	 *           TextureCoordinates is supported. */
 	public static VertexAttributes createAttributes (long usage) {
-		final Array<VertexAttribute> attrs = new Array<VertexAttribute>();
+		final Array<VertexAttribute> attrs = new Array<>();
 		if ((usage & Usage.Position) == Usage.Position)
 			attrs.add(new VertexAttribute(Usage.Position, 3, ShaderProgram.POSITION_ATTRIBUTE));
 		if ((usage & Usage.ColorUnpacked) == Usage.ColorUnpacked)

@@ -23,7 +23,7 @@ import com.badlogic.gdx.utils.Array;
 
 public class Attributes implements Iterable<Attribute>, Comparator<Attribute>, Comparable<Attributes> {
 	protected long mask;
-	protected final Array<Attribute> attributes = new Array<Attribute>();
+	protected final Array<Attribute> attributes = new Array<>();
 
 	protected boolean sorted = true;
 

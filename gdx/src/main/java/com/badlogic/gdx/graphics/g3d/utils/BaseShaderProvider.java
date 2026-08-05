@@ -22,7 +22,7 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 
 public abstract class BaseShaderProvider implements ShaderProvider {
-	protected Array<Shader> shaders = new Array<Shader>();
+	protected Array<Shader> shaders = new Array<>();
 
 	@Override
 	public Shader getShader (Renderable renderable) {

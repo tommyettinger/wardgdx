@@ -54,7 +54,7 @@ public class RenderableShapeBuilder extends BaseShapeBuilder {
 	private static short[] indices;
 	private static float[] vertices;
 	private final static RenderablePool renderablesPool = new RenderablePool();
-	private final static Array<Renderable> renderables = new Array<Renderable>();
+	private final static Array<Renderable> renderables = new Array<>();
 	private static final int FLOAT_BYTES = 4;
 
 	/** Builds normal, tangent and binormal of a RenderableProvider with default colors (normal blue, tangent red, binormal green).

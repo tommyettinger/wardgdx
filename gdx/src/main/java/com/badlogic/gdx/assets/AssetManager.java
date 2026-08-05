@@ -555,7 +555,7 @@ public class AssetManager implements Disposable {
 		// add the asset to the type lookup
 		ObjectMap<String, RefCountedContainer> typeToAssets = assets.get(type);
 		if (typeToAssets == null) {
-			typeToAssets = new ObjectMap<String, RefCountedContainer>();
+			typeToAssets = new ObjectMap<>();
 			assets.put(type, typeToAssets);
 		}
 		RefCountedContainer assetRef = new RefCountedContainer();
@@ -663,7 +663,7 @@ public class AssetManager implements Disposable {
 		if (loader == null) throw new IllegalArgumentException("loader cannot be null.");
 		log.debug("Loader set: " + ClassReflection.getSimpleName(type) + " -> " + ClassReflection.getSimpleName(loader.getClass()));
 		ObjectMap<String, AssetLoader> loaders = this.loaders.get(type);
-		if (loaders == null) this.loaders.put(type, loaders = new ObjectMap<String, AssetLoader>());
+		if (loaders == null) this.loaders.put(type, loaders = new ObjectMap<>());
 		loaders.put(suffix == null ? "" : suffix, loader);
 	}
 
@@ -713,7 +713,7 @@ public class AssetManager implements Disposable {
 		finishLoading();
 
 		synchronized (this) {
-			ObjectIntMap<String> dependencyCount = new ObjectIntMap<String>();
+			ObjectIntMap<String> dependencyCount = new ObjectIntMap<>();
 			while (assetTypes.size > 0) {
 				// for each asset, figure out how often it was referenced
 				dependencyCount.clear(51);

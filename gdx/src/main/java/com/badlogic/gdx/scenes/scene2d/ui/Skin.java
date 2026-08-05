@@ -214,7 +214,7 @@ public class Skin implements Disposable {
 		int i = 0;
 		TextureRegion region = optional(regionName + "_" + (i++), TextureRegion.class);
 		if (region != null) {
-			regions = new Array<TextureRegion>();
+			regions = new Array<>();
 			while (region != null) {
 				regions.add(region);
 				region = optional(regionName + "_" + (i++), TextureRegion.class);

@@ -167,7 +167,7 @@ public abstract class ParticleControllerInfluencer extends Influencer {
 	}
 
 	public ParticleControllerInfluencer (ParticleController... templates) {
-		this.templates = new Array<ParticleController>(templates);
+		this.templates = new Array<>(templates);
 	}
 
 	public ParticleControllerInfluencer (ParticleControllerInfluencer influencer) {
@@ -202,10 +202,10 @@ public abstract class ParticleControllerInfluencer extends Influencer {
 	@Override
 	public void save (AssetManager manager, ResourceData resources) {
 		SaveData data = resources.createSaveData();
-		Array<ParticleEffect> effects = manager.getAll(ParticleEffect.class, new Array<ParticleEffect>());
+		Array<ParticleEffect> effects = manager.getAll(ParticleEffect.class, new Array<>());
 
-		Array<ParticleController> controllers = new Array<ParticleController>(templates);
-		Array<IntArray> effectsIndices = new Array<IntArray>();
+		Array<ParticleController> controllers = new Array<>(templates);
+		Array<IntArray> effectsIndices = new Array<>();
 
 		for (int i = 0; i < effects.size && controllers.size > 0; ++i) {
 			ParticleEffect effect = effects.get(i);

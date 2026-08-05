@@ -136,7 +136,7 @@ public class NetJavaImpl {
 	public NetJavaImpl (int maxThreads) {
 		final boolean isCachedPool = maxThreads == Integer.MAX_VALUE;
 		executorService = new ThreadPoolExecutor(isCachedPool ? 0 : maxThreads, maxThreads, 60L, TimeUnit.SECONDS,
-			isCachedPool ? new SynchronousQueue<Runnable>() : new LinkedBlockingQueue<Runnable>(), new ThreadFactory() {
+			isCachedPool ? new SynchronousQueue<>() : new LinkedBlockingQueue<>(), new ThreadFactory() {
 				AtomicInteger threadID = new AtomicInteger();
 
 				@Override
@@ -147,9 +147,9 @@ public class NetJavaImpl {
 				}
 			});
 		executorService.allowCoreThreadTimeOut(!isCachedPool);
-		connections = new ObjectMap<HttpRequest, HttpURLConnection>();
-		listeners = new ObjectMap<HttpRequest, HttpResponseListener>();
-		tasks = new ObjectMap<HttpRequest, Future<?>>();
+		connections = new ObjectMap<>();
+		listeners = new ObjectMap<>();
+		tasks = new ObjectMap<>();
 	}
 
 	public void sendHttpRequest (final HttpRequest httpRequest, final HttpResponseListener httpResponseListener) {

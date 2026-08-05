@@ -90,8 +90,8 @@ public class CameraGroupStrategy implements GroupStrategy, Disposable {
 			return new Array();
 		}
 	};
-	protected Array<Array<Decal>> usedArrays = new Array<Array<Decal>>();
-	protected ObjectMap<DecalMaterial, Array<Decal>> materialGroups = new ObjectMap<DecalMaterial, Array<Decal>>();
+	protected Array<Array<Decal>> usedArrays = new Array<>();
+	protected ObjectMap<DecalMaterial, Array<Decal>> materialGroups = new ObjectMap<>();
 
 	protected Camera camera;
 	protected ShaderProgram shader;

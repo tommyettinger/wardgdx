@@ -29,7 +29,7 @@ public class MapProperties {
 
 	/** Creates an empty properties set */
 	public MapProperties () {
-		properties = new ObjectMap<String, Object>();
+		properties = new ObjectMap<>();
 	}
 
 	/** @param key property name

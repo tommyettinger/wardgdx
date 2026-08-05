@@ -39,8 +39,8 @@ public final class ParticleSystem implements RenderableProvider {
 	private Array<ParticleEffect> effects;
 
 	public ParticleSystem () {
-		batches = new Array<ParticleBatch<?>>();
-		effects = new Array<ParticleEffect>();
+		batches = new Array<>();
+		effects = new Array<>();
 	}
 
 	public void add (ParticleBatch<?> batch) {

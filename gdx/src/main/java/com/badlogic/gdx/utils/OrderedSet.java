@@ -41,8 +41,8 @@ import java.util.NoSuchElementException;
  * @author Nathan Sweet
  * @author Tommy Ettinger */
 public class OrderedSet<T> extends ObjectSet<T> {
-	final Array<T> items;
-	transient OrderedSetIterator iterator1, iterator2;
+	protected final Array<T> items;
+	protected transient OrderedSetIterator iterator1, iterator2;
 
 	public OrderedSet () {
 		items = new Array();
@@ -249,7 +249,7 @@ public class OrderedSet<T> extends ObjectSet<T> {
 	}
 
 	static public <T> OrderedSet<T> with (T... array) {
-		OrderedSet<T> set = new OrderedSet<T>();
+		OrderedSet<T> set = new OrderedSet<>();
 		set.addAll(array);
 		return set;
 	}

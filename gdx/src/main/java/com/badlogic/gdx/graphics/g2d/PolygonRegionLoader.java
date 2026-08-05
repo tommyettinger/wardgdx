@@ -96,8 +96,8 @@ public class PolygonRegionLoader extends SynchronousAssetLoader<PolygonRegion, P
 		}
 
 		if (image != null) {
-			Array<AssetDescriptor> deps = new Array<AssetDescriptor>(1);
-			deps.add(new AssetDescriptor<Texture>(file.sibling(image), Texture.class));
+			Array<AssetDescriptor> deps = new Array<>(1);
+			deps.add(new AssetDescriptor<>(file.sibling(image), Texture.class));
 			return deps;
 		}
 

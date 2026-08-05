@@ -104,9 +104,9 @@ public class ParticleEmitter {
 	}
 
 	public ParticleEmitter (ParticleEmitter emitter) {
-		sprites = new Array<Sprite>(emitter.sprites);
+		sprites = new Array<>(emitter.sprites);
 		name = emitter.name;
-		imagePaths = new Array<String>(emitter.imagePaths);
+		imagePaths = new Array<>(emitter.imagePaths);
 		setMaxParticleCount(emitter.maxParticleCount);
 		minParticleCount = emitter.minParticleCount;
 		delayValue.load(emitter.delayValue);
@@ -140,8 +140,8 @@ public class ParticleEmitter {
 	}
 
 	private void initialize () {
-		sprites = new Array<Sprite>();
-		imagePaths = new Array<String>();
+		sprites = new Array<>();
+		imagePaths = new Array<>();
 		durationValue.setAlwaysActive(true);
 		emissionValue.setAlwaysActive(true);
 		lifeValue.setAlwaysActive(true);
@@ -1187,7 +1187,7 @@ public class ParticleEmitter {
 				line = reader.readLine();
 			}
 
-			Array<String> imagePaths = new Array<String>();
+			Array<String> imagePaths = new Array<>();
 			while ((line = reader.readLine()) != null && !line.isEmpty()) {
 				imagePaths.add(line);
 			}

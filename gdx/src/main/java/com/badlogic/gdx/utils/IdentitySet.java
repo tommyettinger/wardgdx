@@ -79,7 +79,7 @@ public class IdentitySet<T> extends ObjectSet<T> {
 	}
 
 	static public <T> IdentitySet<T> with (T... array) {
-		IdentitySet<T> set = new IdentitySet<T>(array.length);
+		IdentitySet<T> set = new IdentitySet<>(array.length);
 		set.addAll(array);
 		return set;
 	}

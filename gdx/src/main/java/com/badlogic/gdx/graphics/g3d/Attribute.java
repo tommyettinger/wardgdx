@@ -25,7 +25,7 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
  * @author Xoppa */
 public abstract class Attribute implements Comparable<Attribute> {
 	/** The registered type aliases */
-	private final static Array<String> types = new Array<String>();
+	private final static Array<String> types = new Array<>();
 
 	/** The long bitmask is limited to 64 bits **/
 	private final static int MAX_ATTRIBUTE_COUNT = 64;

@@ -32,10 +32,10 @@ public class RepeatablePolygonSprite {
 
 	private boolean dirty = true;
 
-	private Array<float[]> parts = new Array<float[]>();
+	private Array<float[]> parts = new Array<>();
 
-	private Array<float[]> vertices = new Array<float[]>();
-	private Array<short[]> indices = new Array<short[]>();
+	private Array<float[]> vertices = new Array<>();
+	private Array<short[]> indices = new Array<>();
 
 	private int cols, rows;
 	private float gridWidth, gridHeight;

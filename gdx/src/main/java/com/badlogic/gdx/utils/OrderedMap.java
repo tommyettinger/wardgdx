@@ -41,7 +41,7 @@ import java.util.NoSuchElementException;
  * @author Nathan Sweet
  * @author Tommy Ettinger */
 public class OrderedMap<K, V> extends ObjectMap<K, V> {
-	final Array<K> keys;
+	protected final Array<K> keys;
 
 	/** Creates a new map with an initial capacity of 51 and a load factor of 0.8. */
 	public OrderedMap () {

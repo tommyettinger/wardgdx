@@ -224,7 +224,7 @@ public final class VertexAttributes implements Iterable<VertexAttribute>, Compar
 	/** @see Collections#allocateIterators */
 	@Override
 	public Iterator<VertexAttribute> iterator () {
-		if (iterable == null) iterable = new ReadonlyIterable<VertexAttribute>(attributes);
+		if (iterable == null) iterable = new ReadonlyIterable<>(attributes);
 		return iterable.iterator();
 	}
 

@@ -95,7 +95,7 @@ public class BaseAnimationController {
 			return new Transform();
 		}
 	};
-	private final static ObjectMap<Node, Transform> transforms = new ObjectMap<Node, Transform>();
+	private final static ObjectMap<Node, Transform> transforms = new ObjectMap<>();
 	private boolean applying = false;
 	/** The {@link ModelInstance} on which the animations are being performed. */
 	public final ModelInstance target;

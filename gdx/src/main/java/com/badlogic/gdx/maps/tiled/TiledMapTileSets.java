@@ -27,7 +27,7 @@ public class TiledMapTileSets implements Iterable<TiledMapTileSet> {
 
 	/** Creates an empty collection of tilesets. */
 	public TiledMapTileSets () {
-		tilesets = new Array<TiledMapTileSet>();
+		tilesets = new Array<>();
 	}
 
 	/** @param index index to get the desired {@link TiledMapTileSet} at.

@@ -29,7 +29,7 @@ import java.util.Map;
  * @author Tomski */
 public class TextureArray extends GLTexture {
 
-	final static Map<Application, Array<TextureArray>> managedTextureArrays = new HashMap<Application, Array<TextureArray>>();
+	final static Map<Application, Array<TextureArray>> managedTextureArrays = new HashMap<>();
 
 	private TextureArrayData data;
 
@@ -116,7 +116,7 @@ public class TextureArray extends GLTexture {
 
 	private static void addManagedTexture (Application app, TextureArray texture) {
 		Array<TextureArray> managedTextureArray = managedTextureArrays.get(app);
-		if (managedTextureArray == null) managedTextureArray = new Array<TextureArray>();
+		if (managedTextureArray == null) managedTextureArray = new Array<>();
 		managedTextureArray.add(texture);
 		managedTextureArrays.put(app, managedTextureArray);
 	}

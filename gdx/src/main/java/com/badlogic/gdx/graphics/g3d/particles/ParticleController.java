@@ -81,7 +81,7 @@ public class ParticleController implements Json.Serializable, ResourceData.Confi
 		this.emitter = emitter;
 		this.renderer = renderer;
 		this.particleChannels = new ParticleChannels();
-		this.influencers = new Array<Influencer>(influencers);
+		this.influencers = new Array<>(influencers);
 	}
 
 	/** Sets the delta used to step the simulation */

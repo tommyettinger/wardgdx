@@ -176,7 +176,7 @@ public interface Net {
 		private boolean includeCredentials = false;
 
 		public HttpRequest () {
-			this.headers = new HashMap<String, String>();
+			this.headers = new HashMap<>();
 		}
 
 		/** Creates a new HTTP request with the specified HTTP method, see {@link HttpMethods}.

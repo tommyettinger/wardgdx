@@ -57,13 +57,13 @@ public class ResourceData<T> implements Json.Serializable {
 		protected ResourceData resources;
 
 		public SaveData () {
-			data = new ObjectMap<String, Object>();
+			data = new ObjectMap<>();
 			assets = new IntArray();
 			loadIndex = 0;
 		}
 
 		public SaveData (ResourceData resources) {
-			data = new ObjectMap<String, Object>();
+			data = new ObjectMap<>();
 			assets = new IntArray();
 			loadIndex = 0;
 			this.resources = resources;
@@ -149,9 +149,9 @@ public class ResourceData<T> implements Json.Serializable {
 	public T resource;
 
 	public ResourceData () {
-		uniqueData = new ObjectMap<String, SaveData>();
+		uniqueData = new ObjectMap<>();
 		data = new Array<>(true, 3, SaveData[]::new);
-		sharedAssets = new Array<AssetData>();
+		sharedAssets = new Array<>();
 		currentLoadIndex = 0;
 	}
 
@@ -172,7 +172,7 @@ public class ResourceData<T> implements Json.Serializable {
 	}
 
 	public Array<AssetDescriptor> getAssetDescriptors () {
-		Array<AssetDescriptor> descriptors = new Array<AssetDescriptor>();
+		Array<AssetDescriptor> descriptors = new Array<>();
 		for (AssetData data : sharedAssets) {
 			descriptors.add(new AssetDescriptor<T>(data.filename, data.type));
 		}

@@ -41,7 +41,7 @@ import com.badlogic.gdx.utils.reflect.ClassReflection;
  * @author inferno */
 public class ParticleEffectLoader
 	extends AsynchronousAssetLoader<ParticleEffect, ParticleEffectLoader.ParticleEffectLoadParameter> {
-	protected Array<ObjectMap.Entry<String, ResourceData<ParticleEffect>>> items = new Array<ObjectMap.Entry<String, ResourceData<ParticleEffect>>>();
+	protected Array<ObjectMap.Entry<String, ResourceData<ParticleEffect>>> items = new Array<>();
 
 	public ParticleEffectLoader (FileHandleResolver resolver) {
 		super(resolver);
@@ -57,14 +57,14 @@ public class ParticleEffectLoader
 		ResourceData<ParticleEffect> data = json.fromJson(ResourceData.class, file);
 		Array<AssetData> assets = null;
 		synchronized (items) {
-			ObjectMap.Entry<String, ResourceData<ParticleEffect>> entry = new ObjectMap.Entry<String, ResourceData<ParticleEffect>>();
+			ObjectMap.Entry<String, ResourceData<ParticleEffect>> entry = new ObjectMap.Entry<>();
 			entry.key = fileName;
 			entry.value = data;
 			items.add(entry);
 			assets = data.getAssets();
 		}
 
-		Array<AssetDescriptor> descriptors = new Array<AssetDescriptor>();
+		Array<AssetDescriptor> descriptors = new Array<>();
 		for (AssetData<?> assetData : assets) {
 
 			// If the asset doesn't exist try to load it from loading effect directory
@@ -84,7 +84,7 @@ public class ParticleEffectLoader
 
 	/** Saves the effect to the given file contained in the passed in parameter. */
 	public void save (ParticleEffect effect, ParticleEffectSaveParameter parameter) throws IOException {
-		ResourceData<ParticleEffect> data = new ResourceData<ParticleEffect>(effect);
+		ResourceData<ParticleEffect> data = new ResourceData<>(effect);
 
 		// effect assets
 		effect.save(parameter.manager, data);

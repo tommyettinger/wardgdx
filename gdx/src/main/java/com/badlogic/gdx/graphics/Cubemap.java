@@ -37,7 +37,7 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
  * @author Xoppa */
 public class Cubemap extends GLTexture {
 	private static AssetManager assetManager;
-	final static Map<Application, Array<Cubemap>> managedCubemaps = new HashMap<Application, Array<Cubemap>>();
+	final static Map<Application, Array<Cubemap>> managedCubemaps = new HashMap<>();
 
 	/** Enum to identify each side of a Cubemap */
 	public enum CubemapSide {
@@ -198,7 +198,7 @@ public class Cubemap extends GLTexture {
 
 	private static void addManagedCubemap (Application app, Cubemap cubemap) {
 		Array<Cubemap> managedCubemapArray = managedCubemaps.get(app);
-		if (managedCubemapArray == null) managedCubemapArray = new Array<Cubemap>();
+		if (managedCubemapArray == null) managedCubemapArray = new Array<>();
 		managedCubemapArray.add(cubemap);
 		managedCubemaps.put(app, managedCubemapArray);
 	}
@@ -226,7 +226,7 @@ public class Cubemap extends GLTexture {
 
 			// next we go through each cubemap and reload either directly or via the
 			// asset manager.
-			Array<Cubemap> cubemaps = new Array<Cubemap>(managedCubemapArray);
+			Array<Cubemap> cubemaps = new Array<>(managedCubemapArray);
 			for (Cubemap cubemap : cubemaps) {
 				String fileName = assetManager.getAssetFileName(cubemap);
 				if (fileName == null) {

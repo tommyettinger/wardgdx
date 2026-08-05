@@ -65,9 +65,9 @@ import com.badlogic.gdx.utils.Pool;
  */
 public class Octree<T> {
 
-	final int maxItemsPerNode;
+	protected final int maxItemsPerNode;
 
-	final Pool<OctreeNode> nodePool = new Pool<OctreeNode>() {
+	protected final Pool<OctreeNode> nodePool = new Pool<OctreeNode>() {
 		@Override
 		protected OctreeNode newObject () {
 			return new OctreeNode();
@@ -75,9 +75,9 @@ public class Octree<T> {
 	};
 
 	protected OctreeNode root;
-	final Collider<T> collider;
+	protected final Collider<T> collider;
 
-	static final Vector3 tmp = new Vector3();
+	protected static final Vector3 tmp = new Vector3();
 
 	public Octree (Vector3 minimum, Vector3 maximum, int maxDepth, int maxItemsPerNode, Collider<T> collider) {
 		super();
@@ -152,11 +152,11 @@ public class Octree<T> {
 
 	protected class OctreeNode {
 
-		int level;
-		final BoundingBox bounds = new BoundingBox();
-		boolean leaf;
+		protected int level;
+		protected final BoundingBox bounds = new BoundingBox();
+		protected boolean leaf;
 		private Octree.OctreeNode[] children; // May be null when leaf is true.
-		private final Array<T> geometries = new Array<T>(Math.min(16, maxItemsPerNode));
+		private final Array<T> geometries = new Array<>(Math.min(16, maxItemsPerNode));
 
 		private void split () {
 			float midx = (bounds.max.x + bounds.min.x) * 0.5f;
@@ -241,7 +241,7 @@ public class Octree<T> {
 				}
 
 				if (removed) {
-					ObjectSet<T> geometrySet = new ObjectSet<T>();
+					ObjectSet<T> geometrySet = new ObjectSet<>();
 					for (Octree.OctreeNode node : children) {
 						node.getAll(geometrySet);
 					}
@@ -375,8 +375,8 @@ public class Octree<T> {
 	}
 
 	public static class RayCastResult<T> {
-		T geometry;
-		float distance;
-		float maxDistanceSq = Float.MAX_VALUE;
+		public T geometry;
+		public float distance;
+		public float maxDistanceSq = Float.MAX_VALUE;
 	}
 }

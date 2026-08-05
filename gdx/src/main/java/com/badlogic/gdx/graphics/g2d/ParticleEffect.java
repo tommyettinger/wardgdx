@@ -205,7 +205,7 @@ public class ParticleEffect implements Disposable {
 		for (int i = 0, n = emitters.size; i < n; i++) {
 			ParticleEmitter emitter = emitters.get(i);
 			if (emitter.getImagePaths().size == 0) continue;
-			Array<Sprite> sprites = new Array<Sprite>();
+			Array<Sprite> sprites = new Array<>();
 			for (String imagePath : emitter.getImagePaths()) {
 				String imageName = new File(imagePath.replace('\\', '/')).getName();
 				int lastDotIndex = imageName.lastIndexOf('.');
@@ -221,11 +221,11 @@ public class ParticleEffect implements Disposable {
 
 	public void loadEmitterImages (FileHandle imagesDir) {
 		ownsTexture = true;
-		ObjectMap<String, Sprite> loadedSprites = new ObjectMap<String, Sprite>(emitters.size);
+		ObjectMap<String, Sprite> loadedSprites = new ObjectMap<>(emitters.size);
 		for (int i = 0, n = emitters.size; i < n; i++) {
 			ParticleEmitter emitter = emitters.get(i);
 			if (emitter.getImagePaths().size == 0) continue;
-			Array<Sprite> sprites = new Array<Sprite>();
+			Array<Sprite> sprites = new Array<>();
 			for (String imagePath : emitter.getImagePaths()) {
 				String imageName = new File(imagePath.replace('\\', '/')).getName();
 				Sprite sprite = loadedSprites.get(imageName);

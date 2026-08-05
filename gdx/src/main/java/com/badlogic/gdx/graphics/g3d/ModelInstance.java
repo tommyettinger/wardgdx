@@ -325,19 +325,19 @@ public class ModelInstance implements RenderableProvider {
 				nodeAnim.scaling = nanim.scaling;
 			} else {
 				if (nanim.translation != null) {
-					nodeAnim.translation = new Array<NodeKeyframe<Vector3>>();
+					nodeAnim.translation = new Array<>();
 					for (final NodeKeyframe<Vector3> kf : nanim.translation)
-						nodeAnim.translation.add(new NodeKeyframe<Vector3>(kf.keytime, kf.value));
+						nodeAnim.translation.add(new NodeKeyframe<>(kf.keytime, kf.value));
 				}
 				if (nanim.rotation != null) {
-					nodeAnim.rotation = new Array<NodeKeyframe<Quaternion>>();
+					nodeAnim.rotation = new Array<>();
 					for (final NodeKeyframe<Quaternion> kf : nanim.rotation)
-						nodeAnim.rotation.add(new NodeKeyframe<Quaternion>(kf.keytime, kf.value));
+						nodeAnim.rotation.add(new NodeKeyframe<>(kf.keytime, kf.value));
 				}
 				if (nanim.scaling != null) {
-					nodeAnim.scaling = new Array<NodeKeyframe<Vector3>>();
+					nodeAnim.scaling = new Array<>();
 					for (final NodeKeyframe<Vector3> kf : nanim.scaling)
-						nodeAnim.scaling.add(new NodeKeyframe<Vector3>(kf.keytime, kf.value));
+						nodeAnim.scaling.add(new NodeKeyframe<>(kf.keytime, kf.value));
 				}
 			}
 			if (nodeAnim.translation != null || nodeAnim.rotation != null || nodeAnim.scaling != null)

@@ -115,7 +115,7 @@ public class TextureAttribute extends Attribute {
 	public TextureAttribute (final long type) {
 		super(type);
 		if (!is(type)) throw new GdxRuntimeException("Invalid type specified");
-		textureDescription = new TextureDescriptor<Texture>();
+		textureDescription = new TextureDescriptor<>();
 	}
 
 	public <T extends Texture> TextureAttribute (final long type, final TextureDescriptor<T> textureDescription) {

@@ -31,7 +31,7 @@ import com.badlogic.gdx.utils.Null;
  * the real top of the stack.
  * @author mzechner */
 public class ScissorStack {
-	private static Array<Rectangle> scissors = new Array<Rectangle>();
+	private static Array<Rectangle> scissors = new Array<>();
 	static Vector3 tmp = new Vector3();
 	static final Rectangle viewport = new Rectangle();
 
