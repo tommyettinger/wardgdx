@@ -33,19 +33,19 @@ import com.badlogic.gdx.utils.IntArray;
  * Code adapted from {@link VertexBufferObject}.
  * @author mzechner, Dave Clayton <contact@redskyforge.com>, Nate Austin <nate.austin gmail> */
 public class VertexBufferObjectWithVAO implements VertexData {
-	final static IntBuffer tmpHandle = BufferUtils.newIntBuffer(1);
+	private final static IntBuffer tmpHandle = BufferUtils.newIntBuffer(1);
 
-	final VertexAttributes attributes;
-	final FloatBuffer buffer;
-	final ByteBuffer byteBuffer;
-	final boolean ownsBuffer;
-	int bufferHandle;
-	final boolean isStatic;
-	final int usage;
-	boolean isDirty = false;
-	boolean isBound = false;
-	int vaoHandle = -1;
-	IntArray cachedLocations = new IntArray();
+	protected final VertexAttributes attributes;
+	protected final FloatBuffer buffer;
+	protected final ByteBuffer byteBuffer;
+	protected final boolean ownsBuffer;
+	protected int bufferHandle;
+	protected final boolean isStatic;
+	protected final int usage;
+	protected boolean isDirty = false;
+	protected boolean isBound = false;
+	protected int vaoHandle = -1;
+	protected IntArray cachedLocations = new IntArray();
 
 	/** Constructs a new interleaved VertexBufferObjectWithVAO.
 	 *

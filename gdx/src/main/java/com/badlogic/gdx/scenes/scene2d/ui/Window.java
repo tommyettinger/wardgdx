@@ -43,12 +43,12 @@ public class Window extends Table implements Styleable<Window.WindowStyle> {
 	static private final int MOVE = 1 << 5;
 
 	private WindowStyle style;
-	boolean isMovable = true, isModal, isResizable;
-	int resizeBorder = 8;
-	boolean keepWithinStage = true;
-	Label titleLabel;
-	Table titleTable;
-	boolean drawTitleTable;
+	protected boolean isMovable = true, isModal, isResizable;
+	protected int resizeBorder = 8;
+	protected boolean keepWithinStage = true;
+	protected Label titleLabel;
+	protected Table titleTable;
+	protected boolean drawTitleTable;
 
 	protected int edge;
 	protected boolean dragging;
@@ -90,7 +90,7 @@ public class Window extends Table implements Styleable<Window.WindowStyle> {
 			}
 		});
 		addListener(new InputListener() {
-			float startX, startY, lastX, lastY;
+			private float startX, startY, lastX, lastY;
 
 			private void updateEdge (float x, float y) {
 				float border = resizeBorder / 2f;

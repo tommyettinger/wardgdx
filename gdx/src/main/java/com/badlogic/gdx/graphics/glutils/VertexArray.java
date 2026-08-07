@@ -37,10 +37,10 @@ import com.badlogic.gdx.utils.BufferUtils;
  *
  * @author mzechner, Dave Clayton <contact@redskyforge.com> */
 public class VertexArray implements VertexData {
-	final VertexAttributes attributes;
-	final FloatBuffer buffer;
-	final ByteBuffer byteBuffer;
-	boolean isBound = false;
+	protected final VertexAttributes attributes;
+	protected final FloatBuffer buffer;
+	protected final ByteBuffer byteBuffer;
+	protected boolean isBound = false;
 
 	/** Constructs a new interleaved VertexArray
 	 *

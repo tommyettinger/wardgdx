@@ -40,15 +40,15 @@ import com.badlogic.gdx.utils.GdxRuntimeException;
  *
  * @author mzechner */
 public class VertexBufferObjectSubData implements VertexData {
-	final VertexAttributes attributes;
-	final FloatBuffer buffer;
-	final ByteBuffer byteBuffer;
-	int bufferHandle;
-	final boolean isDirect;
-	final boolean isStatic;
-	final int usage;
-	boolean isDirty = false;
-	boolean isBound = false;
+	protected final VertexAttributes attributes;
+	protected final FloatBuffer buffer;
+	protected final ByteBuffer byteBuffer;
+	protected int bufferHandle;
+	protected final boolean isDirect;
+	protected final boolean isStatic;
+	protected final int usage;
+	protected boolean isDirty = false;
+	protected boolean isBound = false;
 
 	/** Constructs a new interleaved VertexBufferObject.
 	 *

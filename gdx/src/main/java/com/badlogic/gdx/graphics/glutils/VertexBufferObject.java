@@ -46,8 +46,8 @@ public class VertexBufferObject implements VertexData {
 	private boolean ownsBuffer;
 	private int bufferHandle;
 	private int usage;
-	boolean isDirty = false;
-	boolean isBound = false;
+	protected boolean isDirty = false;
+	protected boolean isBound = false;
 
 	/** Constructs a new interleaved VertexBufferObject.
 	 *
