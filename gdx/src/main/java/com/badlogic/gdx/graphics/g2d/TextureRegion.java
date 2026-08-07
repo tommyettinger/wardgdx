@@ -23,10 +23,10 @@ import com.badlogic.gdx.graphics.Texture;
  * @author mzechner
  * @author Nathan Sweet */
 public class TextureRegion {
-	Texture texture;
-	float u, v;
-	float u2, v2;
-	int regionWidth, regionHeight;
+	public Texture texture;
+	public float u, v;
+	public float u2, v2;
+	public int regionWidth, regionHeight;
 
 	/** Constructs a region that cannot be used until a texture and texture coordinates are set. */
 	public TextureRegion () {

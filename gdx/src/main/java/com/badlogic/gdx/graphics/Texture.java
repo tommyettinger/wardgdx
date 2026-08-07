@@ -75,7 +75,7 @@ public class Texture extends GLTexture {
 		 * images, combining them to the final output pixel. */
 		MipMapLinearLinear(GL20.GL_LINEAR_MIPMAP_LINEAR);
 
-		final int glEnum;
+		private final int glEnum;
 
 		TextureFilter (int glEnum) {
 			this.glEnum = glEnum;
@@ -93,7 +93,7 @@ public class Texture extends GLTexture {
 	public enum TextureWrap {
 		MirroredRepeat(GL20.GL_MIRRORED_REPEAT), ClampToEdge(GL20.GL_CLAMP_TO_EDGE), Repeat(GL20.GL_REPEAT);
 
-		final int glEnum;
+		private final int glEnum;
 
 		TextureWrap (int glEnum) {
 			this.glEnum = glEnum;
@@ -104,7 +104,7 @@ public class Texture extends GLTexture {
 		}
 	}
 
-	TextureData data;
+	protected TextureData data;
 
 	protected Texture () {
 		super(0, 0);

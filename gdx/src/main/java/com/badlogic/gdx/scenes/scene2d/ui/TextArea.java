@@ -32,22 +32,22 @@ import com.badlogic.gdx.utils.Pool;
 /** A text input field with multiple lines. */
 public class TextArea extends TextField {
 	/** Array storing lines breaks positions **/
-	IntArray linesBreak;
+	protected IntArray linesBreak;
 
 	/** Last text processed. This attribute is used to avoid unnecessary computations while calculating offsets **/
 	private String lastText;
 
 	/** Current line for the cursor **/
-	int cursorLine;
+	protected int cursorLine;
 
 	/** Index of the first line showed by the text area **/
-	int firstLineShowing;
+	protected int firstLineShowing;
 
 	/** Number of lines showed by the text area **/
 	private int linesShowing;
 
 	/** Variable to maintain the x offset of the cursor when moving up and down. If it's set to -1, the offset is reset **/
-	float moveOffset;
+	protected float moveOffset;
 
 	private float prefRows;
 

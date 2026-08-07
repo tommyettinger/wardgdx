@@ -38,8 +38,8 @@ import com.badlogic.gdx.utils.Null;
  * @author Josh Street */
 public class Touchpad extends Widget implements Styleable<Touchpad.TouchpadStyle> {
 	private TouchpadStyle style;
-	boolean touched;
-	boolean resetOnTouchUp = true;
+	protected boolean touched;
+	protected boolean resetOnTouchUp = true;
 	private float deadzoneRadius;
 	private final Circle knobBounds = new Circle(0, 0, 0);
 	private final Circle touchBounds = new Circle(0, 0, 0);

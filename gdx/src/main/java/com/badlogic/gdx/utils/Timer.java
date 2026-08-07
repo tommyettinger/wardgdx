@@ -29,8 +29,8 @@ public class Timer {
 	// Task access is synchronized using the Task instance.
 	// Posted tasks are synchronized using TimerThread#postedTasks.
 
-	static final Object threadLock = new Object();
-	static TimerThread thread;
+	private static final Object threadLock = new Object();
+	protected static TimerThread thread;
 
 	/** Timer instance singleton for general application wide usage. Static methods on {@link Timer} make convenient use of this
 	 * instance. */
@@ -52,8 +52,8 @@ public class Timer {
 		}
 	}
 
-	final Array<Task> tasks = new Array(false, 8);
-	long stopTimeMillis;
+	protected final Array<Task> tasks = new Array<>(false, 8);
+	protected long stopTimeMillis;
 
 	public Timer () {
 		start();
@@ -202,10 +202,10 @@ public class Timer {
 	/** Runnable that can be scheduled on a {@link Timer}.
 	 * @author Nathan Sweet */
 	static abstract public class Task implements Runnable {
-		final Application app;
-		long executeTimeMillis, intervalMillis;
-		int repeatCount;
-		volatile Timer timer;
+		protected final Application app;
+		protected long executeTimeMillis, intervalMillis;
+		protected int repeatCount;
+		protected volatile Timer timer;
 
 		public Task () {
 			app = Gdx.app; // Store which app to postRunnable (eg for multiple LwjglAWTCanvas).
@@ -256,17 +256,17 @@ public class Timer {
 		}
 	}
 
-	/** Manages a single thread for updating timers. Uses libgdx application events to pause, resume, and dispose the thread.
+	/** Manages a single thread for updating timers. Uses libGDX application events to pause, resume, and dispose the thread.
 	 * @author Nathan Sweet */
-	static class TimerThread implements Runnable, LifecycleListener {
-		final Files files;
-		final Application app;
-		final Array<Timer> instances = new Array(1);
-		Timer instance;
-		long pauseTimeMillis;
+	protected static class TimerThread implements Runnable, LifecycleListener {
+		protected final Files files;
+		protected final Application app;
+		protected final Array<Timer> instances = new Array<>(1);
+		protected Timer instance;
+		protected long pauseTimeMillis;
 
-		final Array<Task> postedTasks = new Array(2);
-		final Array<Task> runTasks = new Array(2);
+		protected final Array<Task> postedTasks = new Array<>(2);
+		protected final Array<Task> runTasks = new Array<>(2);
 		private final Runnable runPostedTasks = new Runnable() {
 			public void run () {
 				runPostedTasks();

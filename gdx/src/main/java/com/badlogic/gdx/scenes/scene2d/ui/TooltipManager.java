@@ -52,17 +52,17 @@ public class TooltipManager {
 	 * the mouse cursor. Default is 7. */
 	public float edgeDistance = 7;
 
-	final Array<Tooltip> shown = new Array();
+	protected final Array<Tooltip> shown = new Array<>();
 
-	float time = initialTime;
-	final Task resetTask = new Task() {
+	protected float time = initialTime;
+	protected final Task resetTask = new Task() {
 		public void run () {
 			time = initialTime;
 		}
 	};
 
-	Tooltip showTooltip;
-	final Task showTask = new Task() {
+	protected Tooltip showTooltip;
+	protected final Task showTask = new Task() {
 		public void run () {
 			if (showTooltip == null || showTooltip.targetActor == null) return;
 

@@ -94,35 +94,35 @@ public class TextField extends Widget implements Disableable, Styleable<TextFiel
 	protected final GlyphLayout layout = new GlyphLayout();
 	protected final FloatArray glyphPositions = new FloatArray();
 
-	TextFieldStyle style;
+	protected TextFieldStyle style;
 	private String messageText;
 	protected CharSequence displayText;
-	Clipboard clipboard;
-	InputListener inputListener;
-	@Null TextFieldListener listener;
-	@Null TextFieldFilter filter;
-	OnscreenKeyboard keyboard = DEFAULT_ONSCREEN_KEYBOARD;
-	boolean focusTraversal = true, onlyFontChars = true, disabled;
+	protected Clipboard clipboard;
+	protected InputListener inputListener;
+	protected @Null TextFieldListener listener;
+	protected @Null TextFieldFilter filter;
+	protected OnscreenKeyboard keyboard = DEFAULT_ONSCREEN_KEYBOARD;
+	protected boolean focusTraversal = true, onlyFontChars = true, disabled;
 	private int textHAlign = Align.left;
 	private float selectionX, selectionWidth;
 	private final Undo undo = new Undo(undoMax);
 
-	boolean passwordMode;
+	protected boolean passwordMode;
 	private StringBuilder passwordBuffer;
 	private char passwordCharacter = BULLET;
 
 	protected float fontOffset, textHeight, textOffset;
-	float renderOffset;
+	protected float renderOffset;
 	protected int visibleTextStart, visibleTextEnd;
 	private int maxLength;
 	private String[] autocompleteOptions;
 	private OnscreenKeyboardType keyboardType = OnscreenKeyboardType.Default;
 	private boolean preventAutoCorrection;
 
-	boolean focused;
-	boolean cursorOn;
-	float blinkTime = 0.32f;
-	final Task blinkTask = new Task() {
+	protected boolean focused;
+	protected boolean cursorOn;
+	protected float blinkTime = 0.32f;
+	protected final Task blinkTask = new Task() {
 		public void run () {
 			if (getStage() == null) {
 				cancel();
@@ -133,8 +133,8 @@ public class TextField extends Widget implements Disableable, Styleable<TextFiel
 		}
 	};
 
-	final KeyRepeatTask keyRepeatTask = new KeyRepeatTask();
-	boolean programmaticChangeEvents;
+	protected final KeyRepeatTask keyRepeatTask = new KeyRepeatTask();
+	protected boolean programmaticChangeEvents;
 
 	public TextField (@Null String text, Skin skin) {
 		this(text, skin.get(TextFieldStyle.class));
@@ -879,8 +879,8 @@ public class TextField extends Widget implements Disableable, Styleable<TextFiel
 		return isWordCharacter(c);
 	}
 
-	class KeyRepeatTask extends Task {
-		int keycode;
+	protected class KeyRepeatTask extends Task {
+		protected int keycode;
 
 		public void run () {
 			if (getStage() == null) {
@@ -1408,9 +1408,9 @@ public class TextField extends Widget implements Disableable, Styleable<TextFiel
 		}
 	}
 
-	static class UndoState {
-		String text;
-		int cursor, selectionStart;
-		boolean hasSelection;
+	protected static class UndoState {
+		protected String text;
+		protected int cursor, selectionStart;
+		protected boolean hasSelection;
 	}
 }

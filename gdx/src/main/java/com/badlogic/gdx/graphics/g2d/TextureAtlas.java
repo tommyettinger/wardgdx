@@ -254,8 +254,8 @@ public class TextureAtlas implements Disposable {
 	}
 
 	static public class TextureAtlasData {
-		final Array<Page> pages = new Array();
-		final Array<Region> regions = new Array();
+		protected final Array<Page> pages = new Array<>();
+		protected final Array<Region> regions = new Array<>();
 
 		public TextureAtlasData () {
 		}
@@ -634,8 +634,8 @@ public class TextureAtlas implements Disposable {
 	/** A sprite that, if whitespace was stripped from the region when it was packed, is automatically positioned as if whitespace
 	 * had not been stripped. */
 	static public class AtlasSprite extends Sprite {
-		final AtlasRegion region;
-		float originalOffsetX, originalOffsetY;
+		protected final AtlasRegion region;
+		protected float originalOffsetX, originalOffsetY;
 
 		public AtlasSprite (AtlasRegion region) {
 			this.region = new AtlasRegion(region);

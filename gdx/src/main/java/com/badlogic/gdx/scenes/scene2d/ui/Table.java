@@ -73,16 +73,16 @@ public class Table extends WidgetGroup {
 	private float[] columnWidth, rowHeight;
 	private float[] expandWidth, expandHeight;
 
-	Value padTop = backgroundTop, padLeft = backgroundLeft, padBottom = backgroundBottom, padRight = backgroundRight;
-	int align = Align.center;
+	protected Value padTop = backgroundTop, padLeft = backgroundLeft, padBottom = backgroundBottom, padRight = backgroundRight;
+	protected int align = Align.center;
 
-	Debug debug = Debug.none;
-	Array<DebugRect> debugRects;
+	protected Debug debug = Debug.none;
+	protected Array<DebugRect> debugRects;
 
-	@Null Drawable background;
+	protected @Null Drawable background;
 	private boolean clip;
 	private @Null Skin skin;
-	boolean round = true;
+	protected boolean round = true;
 
 	public Table () {
 		this(null);
@@ -1270,12 +1270,12 @@ public class Table extends WidgetGroup {
 
 	/** @author Nathan Sweet */
 	static public class DebugRect extends Rectangle {
-		static Pool<DebugRect> pool = new DefaultPool<>(DebugRect::new);
-		Color color;
+		private static final Pool<DebugRect> pool = new DefaultPool<>(DebugRect::new);
+		protected Color color;
 	}
 
 	/** @author Nathan Sweet */
-	static public enum Debug {
+	public enum Debug {
 		none, all, table, cell, actor
 	}
 

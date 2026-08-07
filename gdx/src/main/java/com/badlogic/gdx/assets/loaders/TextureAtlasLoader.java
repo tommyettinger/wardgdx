@@ -36,7 +36,7 @@ public class TextureAtlasLoader extends SynchronousAssetLoader<TextureAtlas, Tex
 		super(resolver);
 	}
 
-	TextureAtlasData data;
+	protected TextureAtlasData data;
 
 	@Override
 	public TextureAtlas load (AssetManager assetManager, String fileName, FileHandle file, TextureAtlasParameter parameter) {

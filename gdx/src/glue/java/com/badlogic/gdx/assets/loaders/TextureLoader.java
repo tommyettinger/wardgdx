@@ -34,12 +34,12 @@ import com.badlogic.gdx.utils.Array;
  * @author mzechner */
 public class TextureLoader extends AsynchronousAssetLoader<Texture, TextureLoader.TextureParameter> {
 	static public class TextureLoaderInfo {
-		String filename;
-		TextureData data;
-		Texture texture;
+		public String filename;
+		public TextureData data;
+		public Texture texture;
 	};
 
-	TextureLoaderInfo info = new TextureLoaderInfo();
+	protected TextureLoaderInfo info = new TextureLoaderInfo();
 
 	public TextureLoader (FileHandleResolver resolver) {
 		super(resolver);

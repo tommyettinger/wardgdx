@@ -46,14 +46,14 @@ import com.badlogic.gdx.utils.Null;
 public class Tree<N extends Node, V> extends WidgetGroup implements Styleable<Tree.TreeStyle> {
 	static private final Vector2 tmp = new Vector2();
 
-	TreeStyle style;
-	final Array<N> rootNodes = new Array();
-	final Selection<N> selection;
-	float ySpacing = 4, iconSpacingLeft = 2, iconSpacingRight = 2, paddingLeft, paddingRight, indentSpacing;
+	protected TreeStyle style;
+	protected final Array<N> rootNodes = new Array();
+	protected final Selection<N> selection;
+	protected float ySpacing = 4, iconSpacingLeft = 2, iconSpacingRight = 2, paddingLeft, paddingRight, indentSpacing;
 	private float prefWidth, prefHeight;
 	private boolean sizeInvalid = true;
 	private N foundNode, overNode;
-	N rangeStart;
+	protected N rangeStart;
 	private ClickListener clickListener;
 
 	public Tree (Skin skin) {
@@ -586,14 +586,14 @@ public class Tree<N extends Node, V> extends WidgetGroup implements Styleable<Tr
 	 * @param <A> The type for the node's actor.
 	 * @author Nathan Sweet */
 	static abstract public class Node<N extends Node, V, A extends Actor> {
-		A actor;
-		N parent;
-		final Array<N> children = new Array(0);
-		boolean selectable = true;
-		boolean expanded;
-		Drawable icon;
-		float height;
-		V value;
+		protected A actor;
+		protected N parent;
+		protected final Array<N> children = new Array(0);
+		protected boolean selectable = true;
+		protected boolean expanded;
+		protected Drawable icon;
+		protected float height;
+		protected V value;
 
 		public Node (A actor) {
 			if (actor == null) throw new IllegalArgumentException("actor cannot be null.");
