@@ -400,7 +400,7 @@ public class GestureDetector extends InputAdapter {
 		}
 	}
 
-	static class VelocityTracker {
+	private static class VelocityTracker {
 		int sampleSize = 10;
 		float lastX, lastY;
 		float deltaX, deltaY;

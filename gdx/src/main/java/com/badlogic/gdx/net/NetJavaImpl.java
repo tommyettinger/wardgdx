@@ -125,9 +125,9 @@ public class NetJavaImpl {
 	}
 
 	private final ThreadPoolExecutor executorService;
-	final ObjectMap<HttpRequest, HttpURLConnection> connections;
-	final ObjectMap<HttpRequest, HttpResponseListener> listeners;
-	final ObjectMap<HttpRequest, Future<?>> tasks;
+	protected final ObjectMap<HttpRequest, HttpURLConnection> connections;
+	protected final ObjectMap<HttpRequest, HttpResponseListener> listeners;
+	protected final ObjectMap<HttpRequest, Future<?>> tasks;
 
 	public NetJavaImpl () {
 		this(Integer.MAX_VALUE);

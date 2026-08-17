@@ -173,7 +173,7 @@ public class DefaultShader extends BaseShader {
 			}
 		};
 		public final static Setter viewWorldTrans = new LocalSetter() {
-			final Matrix4 temp = new Matrix4();
+			private final Matrix4 temp = new Matrix4();
 
 			@Override
 			public void set (BaseShader shader, int inputID, Renderable renderable, Attributes combinedAttributes) {
@@ -181,7 +181,7 @@ public class DefaultShader extends BaseShader {
 			}
 		};
 		public final static Setter projViewWorldTrans = new LocalSetter() {
-			final Matrix4 temp = new Matrix4();
+			private final Matrix4 temp = new Matrix4();
 
 			@Override
 			public void set (BaseShader shader, int inputID, Renderable renderable, Attributes combinedAttributes) {

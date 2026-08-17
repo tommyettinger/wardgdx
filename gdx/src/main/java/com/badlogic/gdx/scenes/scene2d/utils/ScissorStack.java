@@ -31,9 +31,9 @@ import com.badlogic.gdx.utils.Null;
  * the real top of the stack.
  * @author mzechner */
 public class ScissorStack {
-	private static Array<Rectangle> scissors = new Array<>();
-	static Vector3 tmp = new Vector3();
-	static final Rectangle viewport = new Rectangle();
+	private static final Array<Rectangle> scissors = new Array<>();
+	private static final Vector3 tmp = new Vector3();
+	private static final Rectangle viewport = new Rectangle();
 
 	/** Pushes a new scissor {@link Rectangle} onto the stack, merging it with the current top of the stack. The minimal area of
 	 * overlap between the top of stack rectangle and the provided rectangle is pushed onto the stack. This will invoke

@@ -59,11 +59,11 @@ public class BitmapFont implements Disposable {
 	static private final int PAGE_SIZE = 1 << LOG2_PAGE_SIZE;
 	static private final int PAGES = 0x10000 / PAGE_SIZE;
 
-	final BitmapFontData data;
-	Array<TextureRegion> regions;
+	protected final BitmapFontData data;
+	protected Array<TextureRegion> regions;
 	private final BitmapFontCache cache;
 	private boolean flipped;
-	boolean integer;
+	protected boolean integer;
 	private boolean ownsTexture;
 
 	/** Creates a BitmapFont using the default 15pt Liberation Sans font included in the libgdx JAR file. This is convenient to
